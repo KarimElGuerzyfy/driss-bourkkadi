@@ -2,7 +2,8 @@
 
 @theme {
   /* Brand */
-  --color-main-blue: #73d1e2;
+  --color-main-blue: #73d1e2; 
+  --color-btn-blue: #7DD1E4;
 
   /* Font */
   --font-display: var(--font-darker-grotesque);

@@ -39,14 +39,14 @@ export default function Navbar() {
           <Image
             src="/images/logo.svg"
             alt="Driss Bourkkadi"
-            width={164}
+            width={200}
             height={32}
             priority
           />
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-15 font-display text-base font-bold md:flex lg:gap-20">
+        <ul className="hidden items-center gap-15 font-display text-xl font-bold md:flex lg:gap-20">
           {links.map((link) => (
             <li key={link.href}>
               <Link
@@ -68,21 +68,21 @@ export default function Navbar() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="flex flex-col items-center justify-center gap-[5px] md:hidden"
+          className="flex flex-col items-center justify-center gap-1.25 md:hidden"
         >
           {open ? (
             // 3 horizontal small dashes
             <div className="flex flex-col items-center gap-1">
-              <span className="h-[2px] w-2 bg-white rounded-sm" />
-              <span className="h-[2px] w-2 bg-white rounded-sm" />
-              <span className="h-[2px] w-2 bg-white rounded-sm" />
+              <span className="h-0.5 w-2 bg-white rounded-sm" />
+              <span className="h-0.5 w-2 bg-white rounded-sm" />
+              <span className="h-0.5 w-2 bg-white rounded-sm" />
             </div>
           ) : (
             // burger
             <>
-              <span className="h-[2px] w-[26px] bg-white" />
-              <span className="h-[2px] w-[26px] bg-white" />
-              <span className="h-[2px] w-[26px] bg-white" />
+              <span className="h-0.5 w-6.5 bg-white" />
+              <span className="h-0.5 w-6.5 bg-white" />
+              <span className="h-0.5 w-6.5 bg-white" />
             </>
           )}
         </button>
