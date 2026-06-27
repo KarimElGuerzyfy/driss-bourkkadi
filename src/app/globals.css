@@ -3,7 +3,9 @@
 @theme {
   /* Brand */
   --color-main-blue: #73d1e2; 
-  --color-btn-blue: #7DD1E4;
+  --color-btn-blue: #7DD1E4; 
+  --color-text-marquee: #E3F6F9;
+  --color-card-bg: #363535;
 
   /* Font */
   --font-display: var(--font-darker-grotesque);
@@ -18,4 +20,13 @@ body {
   color: #ffffff;
   font-family: var(--font-display), sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@utility animate-marquee-hero {
+  animation: marquee 50s linear infinite;
 }
