@@ -1,6 +1,7 @@
 export interface ProjectData {
   title: string;
   subtitle: string;
+  subtitle2?: string;
   description1: string;
   description2: string;
   tags: string[];
@@ -14,4 +15,14 @@ export const saoga: ProjectData = {
   description2: "Redesigning a performance sportswear brand – and engineering a digital experience that matches the raw power of the athletes.",
   tags: ["Mar – May 2024 · 2 Months", "Lead UI/UX & Brand Designer", "D2C Sportswear & E-Commerce", "Figma · Adobe Suit · Design System"],
   thumbnail: "/images/projects/saoga.svg",
+};
+
+export const linavobio: ProjectData = {
+  title: "LINOVA BIO",
+  subtitle: "Linova Health & Cosmetics",
+  subtitle2: "Comprehensive Visual Identity & Design System",
+  description1: "Crafting a high-end visual ecosystem for premium wellness – and bridging the gap between clinical science and organic trust.",
+  description2: "",
+  tags: ["2022 - 2026", "Social Media Content System", "Brand Identity", "Figma · Adobe Suit · Design System", "Packaging & Label Design", "Product Photography", "Driven Lifestyle Art Direction"],
+  thumbnail: "/images/projects/linova.svg", // Fixed filename match from image_417ba2.png
 };
