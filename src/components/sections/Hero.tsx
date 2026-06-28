@@ -15,7 +15,7 @@ const STATS: readonly StatItem[] = [
 export default function Hero() {
   return (
     // CONTROLS: Dynamic viewport computation prevents layout overflows caused by the navbar frame height
-    <section className="bg-black px-6 pt-12 pb-21.5 md:px-21.5 min-h-[calc(100vh-62px)] min-[810px]:max-[1100px]:min-h-[700px] min-[810px]:max-[1100px]:h-[700px] grid grid-cols-1 min-[810px]:grid-cols-2 items-start min-[1101px]:items-end min-[1101px]:pb-20">
+    <section className="bg-black px-6 pt-12 pb-21.5 min-[1101px]:px-21.5 min-h-[calc(100vh-62px)] min-[810px]:max-[1100px]:min-h-[700px] min-[810px]:max-[1100px]:h-[700px] grid grid-cols-1 min-[810px]:grid-cols-2 items-start min-[1101px]:items-end min-[1101px]:pb-20 max-w-[1618px] mx-auto">
 
       {/* LEFT COLUMN — title + paragraph + mobile photo */}
       <div className="w-full lg:max-w-2xl flex flex-col justify-end order-1 min-[810px]:col-start-1 min-[810px]:row-start-1 min-[810px]:self-start min-[1101px]:self-end">
