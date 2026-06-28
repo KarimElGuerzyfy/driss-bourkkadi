@@ -1,4 +1,5 @@
 import SaogaCard from "@/components/ui/cards/SaogaCard";
+import SkillsMarquee from "@/components/ui/SkillsMarquee";
 
 export default function Work() {
   return (
