@@ -26,3 +26,13 @@ export const linavobio: ProjectData = {
   tags: ["2022 - 2026", "Social Media Content System", "Brand Identity", "Figma · Adobe Suit · Design System", "Packaging & Label Design", "Product Photography", "Driven Lifestyle Art Direction"],
   thumbnail: "/images/projects/linova.svg", // Fixed filename match from image_417ba2.png
 };
+
+export const aminabennani: ProjectData = {
+  title: "Dr. Amina Bennani – Specialist Dentist",
+  subtitle: "",
+  subtitle2: "",
+  description1: "Elevating Dental Care with a Seamless Digital Experience",
+  description2: "",
+  tags: ["Jan – Apr 2026 · 1 Month", "Lead UI/UX & Brand Designer", "Medical & Healthcare", "Figma · Component System · Responsive Design"],
+  thumbnail: "/images/projects/dentist.svg",
+};
