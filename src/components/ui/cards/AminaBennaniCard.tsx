@@ -16,7 +16,7 @@ export default function AminaBennaniCard() {
 
               {/* Text Area */}
               <div className="flex flex-col ml-6">
-                <h3 className="text-3xl font-bold leading-none text-main-blue">
+                <h3 className="text-[28px] font-bold leading-none text-main-blue">
                   <span className="block leading-none">{aminabennani.title}</span>
                   <span className="block leading-none">{aminabennani.subtitle}</span>
                 </h3>
