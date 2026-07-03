@@ -334,7 +334,7 @@ export default function AboutSection() {
               alt="Driss and Karim"
               width={320}
               height={320}
-              priority
+ priority
               className="w-full h-auto aspect-square object-contain"
             />
           </div>
@@ -420,6 +420,83 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* =========================================================================
+          HORIZONTAL DIVIDER
+          ========================================================================= */}
+      <div className="w-full max-w-[1618px] mx-auto px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px]">
+        <hr className="border-t border-[#ABE3EE]" />
+      </div>
+
+      {/* =========================================================================
+          SECTION 3: EXPERIENCE
+          ========================================================================= */}
+      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[21.5px] px-[21.5px] min-[810px]:pt-[73px] min-[810px]:pb-[43px] min-[810px]:px-[43px] min-[1101px]:pt-[146px] min-[1101px]:pb-[86px] min-[1101px]:px-[86px]">
+        {/* Phone Layout Heading (< 810px) */}
+        <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6">Experience</h2>
+        
+        {/* Tablet & Desktop Layout Heading (>= 810px) */}
+        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-8 font-bold text-main-blue">Experience</h2>
+
+        <div className="flex flex-col font-bold gap-16">
+          {/* Entry 1 */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+              Designer & Owner
+            </h3>
+            <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
+              <span>Bureau Creative Studio By DRISS BOURAKKADI</span>
+              <span className="shrink-0 text-left min-[810px]:text-right">2021 - present</span>
+            </div>
+            <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
+              Founded and manage an independent design studio, specializing in bespoke graphic solutions for startups and established businesses. Designed complete brand identities, including logos, color palettes, and visual guidelines.
+            </p>
+          </div>
+
+          {/* Entry 2 */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+              Web & UI/UX Designer
+            </h3>
+            <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
+              <span>Independent Web Projects</span>
+              <span className="shrink-0 text-left min-[810px]:text-right">2025 - present</span>
+            </div>
+            <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
+              Spearheaded end-to-end web design projects, crafting comprehensive digital experiences. Key projects include a full website design for Dr. Mohamed Taher and an extensive design and marketing case study for the sports brand Saoga. Utilized Figma and the Adobe Creative Suite to build structured, high-end user interfaces that translate brand identities into seamless web experiences.
+            </p>
+          </div>
+
+          {/* Entry 3 */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+              Brand Identity Lead
+            </h3>
+            <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
+              <span>Linova Bio Cosmetics</span>
+              <span className="shrink-0 text-left min-[810px]:text-right">2022 – Present</span>
+            </div>
+            <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
+              Led full brand identity overhaul, including logo, social media kits, and promotional imagery, praised for exceptional quality and alignment with eco-friendly brand values.
+            </p>
+          </div>
+
+          {/* Entry 4 */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+              Creative Partner
+            </h3>
+            <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
+              <span>Khalifi Pub Advertising Agency</span>
+              <span className="shrink-0 text-left min-[810px]:text-right">2024 – Present</span>
+            </div>
+            <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
+              Partnered on logos, visual identities, social designs, and high-value graphic projects, delivering creative solutions that boosted client print and visual communication campaigns.
+            </p>
+          </div>
+        </div>
+        <hr className="border-t border-dashed border-white/30 mt-8" />
       </section>
     </>
   );
