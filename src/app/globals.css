@@ -31,3 +31,7 @@ body {
 @utility animate-marquee-hero {
   animation: marquee 50s linear infinite;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

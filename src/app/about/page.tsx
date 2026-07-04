@@ -123,6 +123,46 @@ export default function AboutSection() {
     ? `${desktop2ScrollHeight || 9999}px`
     : `${allowed2TextHeight || 250}px`;
 
+  // =========================================================================
+  // SECTION 4 TOOL STACK DATA
+  // =========================================================================
+  const toolIcons = [
+    "/icons/toolsicons 1.svg",
+    "/icons/toolsicons 2.svg",
+    "/icons/toolsicons 3.svg",
+    "/icons/toolsicons 4.svg",
+    "/icons/toolsicons 5.svg",
+    "/icons/toolsicons 6.svg",
+    "/icons/toolsicons 7.svg",
+    "/icons/toolsicons 8.svg",
+    "/icons/toolsicons 9.svg",
+    "/icons/toolsicons 10.svg",
+    "/icons/toolsicons 11.svg",
+  ];
+
+  const allToolIcons = [...toolIcons, ...toolIcons, ...toolIcons, ...toolIcons];
+
+  // =========================================================================
+  // SECTION 5 CAROUSEL HOOKS
+  // =========================================================================
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+
+    el.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      el.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   return (
     <>
       <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[21.5px] px-[21.5px] min-[810px]:pt-[73px] min-[810px]:pb-[43px] min-[810px]:px-[43px] min-[1101px]:pt-[146px] min-[1101px]:pb-[86px] min-[1101px]:px-[86px]">
@@ -334,7 +374,7 @@ export default function AboutSection() {
               alt="Driss and Karim"
               width={320}
               height={320}
- priority
+              priority
               className="w-full h-auto aspect-square object-contain"
             />
           </div>
@@ -447,7 +487,7 @@ export default function AboutSection() {
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
               <span>Bureau Creative Studio By DRISS BOURAKKADI</span>
-              <span className="shrink-0 text-left min-[810px]:text-right">2021 - present</span>
+              <span className="shrink-0 text-left min-[810px]:text-right text-[#C7EDF3]">2021 - present</span>
             </div>
             <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
               Founded and manage an independent design studio, specializing in bespoke graphic solutions for startups and established businesses. Designed complete brand identities, including logos, color palettes, and visual guidelines.
@@ -461,7 +501,7 @@ export default function AboutSection() {
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
               <span>Independent Web Projects</span>
-              <span className="shrink-0 text-left min-[810px]:text-right">2025 - present</span>
+              <span className="shrink-0 text-left min-[810px]:text-right text-[#C7EDF3]">2025 - present</span>
             </div>
             <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
               Spearheaded end-to-end web design projects, crafting comprehensive digital experiences. Key projects include a full website design for Dr. Mohamed Taher and an extensive design and marketing case study for the sports brand Saoga. Utilized Figma and the Adobe Creative Suite to build structured, high-end user interfaces that translate brand identities into seamless web experiences.
@@ -475,7 +515,7 @@ export default function AboutSection() {
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
               <span>Linova Bio Cosmetics</span>
-              <span className="shrink-0 text-left min-[810px]:text-right">2022 – Present</span>
+              <span className="shrink-0 text-left min-[810px]:text-right text-[#C7EDF3]">2022 – Present</span>
             </div>
             <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
               Led full brand identity overhaul, including logo, social media kits, and promotional imagery, praised for exceptional quality and alignment with eco-friendly brand values.
@@ -489,7 +529,7 @@ export default function AboutSection() {
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
               <span>Khalifi Pub Advertising Agency</span>
-              <span className="shrink-0 text-left min-[810px]:text-right">2024 – Present</span>
+              <span className="shrink-0 text-left min-[810px]:text-right text-[#C7EDF3]">2024 – Present</span>
             </div>
             <p className="text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-justify leading-tight text-white font-bold">
               Partnered on logos, visual identities, social designs, and high-value graphic projects, delivering creative solutions that boosted client print and visual communication campaigns.
@@ -497,6 +537,127 @@ export default function AboutSection() {
           </div>
         </div>
         <hr className="border-t border-dashed border-white/30 mt-8" />
+      </section>
+
+      {/* =========================================================================
+          SECTION 4: TOOL STACK
+          ========================================================================= */}
+      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[36.5px] min-[810px]:pt-[73px] min-[810px]:pb-[73px] min-[1101px]:pt-[146px] min-[1101px]:pb-[146px]">
+        {/* Phone Layout Heading (< 810px) */}
+        <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6 px-[21.5px]">
+          Tool stack
+        </h2>
+        
+        {/* Tablet & Desktop Layout Heading (>= 810px) */}
+        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-8 font-bold text-main-blue px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px]">
+          Tool stack
+        </h2>
+
+        <p className="text-[24px] min-[1101px]:text-[30px] text-justify font-bold mb-8 leading-tight px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px]">
+          My work is built on a refined combination of Adobe Creative Suite expertise and advanced UI/UX tools, allowing me to craft visually compelling, highly functional interfaces. I blend systems thinking and creativity to produce designs that communicate clarity and strong visual identity. Here is a bit of my current rotation.
+        </p>
+
+        <div className="w-full overflow-x-hidden py-4" dir="ltr">
+          <div
+            className="flex items-center gap-[12px] min-[1101px]:gap-[48px]"
+            style={{
+              width: "max-content",
+              animation: "marquee 50s linear infinite",
+            }}
+          >
+            {allToolIcons.map((icon, index) => (
+              <Image
+                key={index}
+                src={icon}
+                alt=""
+                width={90}
+                height={90}
+                className="w-[45px] h-[45px] min-[1101px]:w-[90px] min-[1101px]:h-[90px] shrink-0 object-contain"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          FULL-WIDTH WRAPPER FOR THE BOTTOM DASHED DIVIDER
+          ========================================================================= */}
+      <div className="w-full max-w-[1618px] mx-auto px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px] pb-[36.5px] min-[810px]:pb-[73px] min-[1101px]:pb-[146px]">
+        <hr className="border-t border-dashed border-white/30" />
+      </div>
+
+      {/* =========================================================================
+          SECTION 5: OFF-SCREEN & INSPIRATION
+          ========================================================================= */}
+      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[21.5px] px-[21.5px] min-[810px]:pt-[73px] min-[810px]:pb-[43px] min-[810px]:px-[43px] min-[1101px]:pt-[146px] min-[1101px]:pb-[86px] min-[1101px]:px-[86px]">
+        {/* Responsive Heading Setup matching structure of earlier sections */}
+        <h2 className="text-[32px] min-[810px]:text-[28px] min-[1101px]:text-[40px] font-bold text-main-blue mb-6 min-[810px]:mb-8">
+          Off-Screen & Inspiration
+        </h2>
+
+        <p className="text-[24px] min-[1101px]:text-[30px] text-justify font-bold mb-8 leading-tight">
+          When I am not deep into a project, my most important title isn&apos;t Founder or Designer—it&apos;s Dad. I love spending my free time exploring the digital space with my son, showing him the creative side of the web, and watching him discover how things work. Seeing the digital world through his eyes keeps my perspective fresh and reminds me exactly why I design: to create experiences that are engaging and full of wonder.
+        </p>
+
+        {/* PHONE IMAGE VIEW: Single vertical column stack (< 810px) */}
+        <div className="flex flex-col gap-6 min-[810px]:hidden">
+          <Image
+            src="/images/profile/bachir 1.svg"
+            alt="Inspiration 1"
+            width={523}
+            height={394}
+            className="w-full h-auto object-cover"
+          />
+          <Image
+            src="/images/profile/bachir 2.svg"
+            alt="Inspiration 2"
+            width={523}
+            height={394}
+            className="w-full h-auto object-cover"
+          />
+          <Image
+            src="/images/profile/bachir 3.svg"
+            alt="Inspiration 3"
+            width={523}
+            height={394}
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        {/* TABLET & DESKTOP IMAGE VIEW: Horizontal flex row track with centered container layout and scroll constraints (>= 810px) */}
+        <div 
+          ref={carouselRef}
+          className="hidden min-[810px]:block w-full overflow-x-auto select-none scrollbar-hide"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch"
+          }}
+        >
+          <div className="flex justify-center min-w-min w-max mx-auto gap-6">
+            <Image
+              src="/images/profile/bachir 1.svg"
+              alt="Inspiration 1"
+              width={523}
+              height={394}
+              className="shrink-0 w-[393px] h-[296px] min-[1101px]:w-[523px] min-[1101px]:h-[394px] object-cover"
+            />
+            <Image
+              src="/images/profile/bachir 2.svg"
+              alt="Inspiration 2"
+              width={523}
+              height={394}
+              className="shrink-0 w-[393px] h-[296px] min-[1101px]:w-[523px] min-[1101px]:h-[394px] object-cover"
+            />
+            <Image
+              src="/images/profile/bachir 3.svg"
+              alt="Inspiration 3"
+              width={523}
+              height={394}
+              className="shrink-0 w-[393px] h-[296px] min-[1101px]:w-[523px] min-[1101px]:h-[394px] object-cover"
+            />
+          </div>
+        </div>
       </section>
     </>
   );
