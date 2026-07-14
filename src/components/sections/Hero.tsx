@@ -15,7 +15,7 @@ const STATS: readonly StatItem[] = [
 export default function Hero() {
   return (
     // CONTROLS: Dynamic viewport computation prevents layout overflows caused by the navbar frame height
-    <section className="bg-black px-6 pt-12 pb-21.5 min-[1101px]:px-21.5 min-h-[calc(100vh-62px)] min-[810px]:max-[1100px]:min-h-[700px] min-[810px]:max-[1100px]:h-[700px] grid grid-cols-1 min-[810px]:grid-cols-2 items-start min-[1101px]:items-end min-[1101px]:pb-20 max-w-[1618px] mx-auto">
+    <section className="bg-black px-6 pt-12 pb-21.5 min-[1101px]:px-21.5 min-h-[calc(100vh-62px)] min-[810px]:max-[1100px]:min-h-175 min-[810px]:max-[1100px]:h-175 grid grid-cols-1 min-[810px]:grid-cols-2 items-start min-[1101px]:items-end min-[1101px]:pb-20 max-w-404.5 mx-auto">
 
       {/* LEFT COLUMN — title + paragraph + mobile photo */}
       <div className="w-full lg:max-w-2xl flex flex-col justify-end order-1 min-[810px]:col-start-1 min-[810px]:row-start-1 min-[810px]:self-start min-[1101px]:self-end">
@@ -40,7 +40,7 @@ export default function Hero() {
             width={568}
             height={545}
             priority
-            className="mx-auto h-auto w-full max-w-[400px]"
+            className="mx-auto h-auto w-full max-w-100"
           />
         </div>
 
@@ -54,7 +54,7 @@ export default function Hero() {
           width={568}
           height={545}
           priority
-          className="h-auto w-full min-w-[320px] max-w-[320px] min-[1101px]:min-w-[400px] min-[1101px]:max-w-[568px] block min-[1101px]:translate-y-12 min-[1101px]:-mr-[30px] min-[1101px]:max-[1400px]:mb-25 min-[1101px]:max-[1260px]:mb-35"
+          className="h-auto w-full min-w-80 max-w-80 min-[1101px]:min-w-100 min-[1101px]:max-w-142 block min-[1101px]:translate-y-12 min-[1101px]:-mr-7.5 min-[1101px]:max-[1400px]:mb-25 min-[1101px]:max-[1260px]:mb-35"
         />
       </div>
 

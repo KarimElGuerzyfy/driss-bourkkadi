@@ -8,11 +8,11 @@ export default function AminaBennaniCard() {
 
       {/* DESKTOP LAYOUT — hidden below 1200px */}
       <div className="hidden min-[1200px]:block">
-        <div className="w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-[950px]">
+        <div className="w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-237.5">
           <div className="flex flex-row items-center h-full">
 
             {/* Left Column — text + tags + buttons */}
-            <div className="flex flex-col justify-center min-[1200px]:w-[36%] min-[1200px]:h-[566px] shrink-0 pt-9">
+            <div className="flex flex-col justify-center min-[1200px]:w-[36%] min-[1200px]:h-141.5 shrink-0 pt-9">
 
               {/* Text Area */}
               <div className="flex flex-col ml-6">
@@ -59,7 +59,7 @@ export default function AminaBennaniCard() {
             </div>
 
             {/* Image Area */}
-            <div className="relative flex-1 min-[1200px]:h-[800px] mr-12">
+            <div className="relative flex-1 min-[1200px]:h-200 mr-12">
               <Image
                 src={aminabennani.thumbnail}
                 alt={aminabennani.title}
@@ -88,7 +88,7 @@ export default function AminaBennaniCard() {
           </div>
 
           {/* Image Area */}
-          <div className="relative w-full md:h-[550px]">
+          <div className="relative w-full md:h-137.5">
             <Image
               src={aminabennani.thumbnail}
               alt={aminabennani.title}
@@ -146,7 +146,7 @@ export default function AminaBennaniCard() {
         <div className="overflow-hidden rounded-3xl bg-card-bg p-6">
 
           {/* Image Area */}
-          <div className="relative w-full h-[320px]">
+          <div className="relative w-full h-80">
             <Image
               src={aminabennani.thumbnail}
               alt={aminabennani.title}

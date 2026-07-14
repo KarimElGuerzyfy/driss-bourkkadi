@@ -11,7 +11,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="bg-footer-bg w-full">
-      <div className="max-w-[1618px] mx-auto px-6 min-[1101px]:px-21.5 py-24 flex flex-col items-center">
+      <div className="max-w-404.5 mx-auto px-6 min-[1101px]:px-21.5 py-24 flex flex-col items-center">
 
         {/* Logo */}
         <Image
@@ -19,7 +19,7 @@ export default function Footer() {
           alt="Driss Bourakkadi"
           width={116}
           height={116}
-          className="w-[80px] md:w-[116px]"
+          className="w-20 md:w-29"
         />
 
         {/* Tagline */}
@@ -46,7 +46,7 @@ export default function Footer() {
                 alt={s.label}
                 width={30}
                 height={30}
-                className="w-[36px] md:w-[30px]"
+                className="w-9 md:w-7.5"
               />
             </a>
           ))}

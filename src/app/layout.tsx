@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Darker_Grotesque } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import SiteChrome from "@/components/layout/SiteChrome";
 import "./globals.css";
 
 const darkerGrotesque = Darker_Grotesque({
@@ -23,9 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={darkerGrotesque.variable}>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

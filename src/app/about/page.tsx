@@ -165,7 +165,7 @@ export default function AboutSection() {
 
   return (
     <>
-      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[21.5px] px-[21.5px] min-[810px]:pt-[73px] min-[810px]:pb-[43px] min-[810px]:px-[43px] min-[1101px]:pt-[146px] min-[1101px]:pb-[86px] min-[1101px]:px-[86px]">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
         {/* =========================================================================
             PHONE LAYOUT (< 810px)
             ========================================================================= */}
@@ -220,7 +220,7 @@ export default function AboutSection() {
             </p>
             
             {!isMobileExpanded && mobileHasOverflow && (
-              <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-10 bg-linear-to-t from-black to-transparent pointer-events-none" />
             )}
           </div>
 
@@ -294,7 +294,7 @@ export default function AboutSection() {
               </div>
 
               {!isDesktopExpanded && desktopHasOverflow && (
-                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-black to-transparent pointer-events-none" />
               )}
             </div>
 
@@ -352,14 +352,14 @@ export default function AboutSection() {
       {/* =========================================================================
           HORIZONTAL DIVIDER
           ========================================================================= */}
-      <div className="w-full max-w-[1618px] mx-auto px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px]">
+      <div className="w-full max-w-404.5 mx-auto px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
         <hr className="border-t border-[#ABE3EE]" />
       </div>
 
       {/* =========================================================================
           SECTION 2: BRIDGING DESIGN AND CODE
           ========================================================================= */}
-      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[21.5px] px-[21.5px] min-[810px]:pt-[73px] min-[810px]:pb-[43px] min-[810px]:px-[43px] min-[1101px]:pt-[146px] min-[1101px]:pb-[86px] min-[1101px]:px-[86px]">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
         {/* Phone Layout (< 810px) */}
         <div className="flex flex-col gap-6 min-[810px]:hidden ">
           <h2 className="text-[32px] font-bold text-main-blue">Bridging Design and Code</h2>
@@ -390,7 +390,7 @@ export default function AboutSection() {
             </p>
             
             {!isMobile2Expanded && mobile2HasOverflow && (
-              <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-10 bg-linear-to-t from-black to-transparent pointer-events-none" />
             )}
           </div>
 
@@ -423,7 +423,7 @@ export default function AboutSection() {
               </div>
 
               {!isDesktop2Expanded && desktop2HasOverflow && (
-                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-black to-transparent pointer-events-none" />
               )}
             </div>
 
@@ -465,14 +465,14 @@ export default function AboutSection() {
       {/* =========================================================================
           HORIZONTAL DIVIDER
           ========================================================================= */}
-      <div className="w-full max-w-[1618px] mx-auto px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px]">
+      <div className="w-full max-w-404.5 mx-auto px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
         <hr className="border-t border-[#ABE3EE]" />
       </div>
 
       {/* =========================================================================
           SECTION 3: EXPERIENCE
           ========================================================================= */}
-      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[21.5px] px-[21.5px] min-[810px]:pt-[73px] min-[810px]:pb-[43px] min-[810px]:px-[43px] min-[1101px]:pt-[146px] min-[1101px]:pb-[86px] min-[1101px]:px-[86px]">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
         {/* Phone Layout Heading (< 810px) */}
         <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6">Experience</h2>
         
@@ -542,24 +542,24 @@ export default function AboutSection() {
       {/* =========================================================================
           SECTION 4: TOOL STACK
           ========================================================================= */}
-      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[36.5px] min-[810px]:pt-[73px] min-[810px]:pb-[73px] min-[1101px]:pt-[146px] min-[1101px]:pb-[146px]">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-9.125 min-[810px]:pt-18.25 min-[810px]:pb-18.25 min-[1101px]:pt-36.5 min-[1101px]:pb-36.5">
         {/* Phone Layout Heading (< 810px) */}
-        <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6 px-[21.5px]">
+        <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6 px-5.375">
           Tool stack
         </h2>
         
         {/* Tablet & Desktop Layout Heading (>= 810px) */}
-        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-8 font-bold text-main-blue px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px]">
+        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-8 font-bold text-main-blue px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
           Tool stack
         </h2>
 
-        <p className="text-[24px] min-[1101px]:text-[30px] text-justify font-bold mb-8 leading-tight px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px]">
+        <p className="text-[24px] min-[1101px]:text-[30px] text-justify font-bold mb-8 leading-tight px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
           My work is built on a refined combination of Adobe Creative Suite expertise and advanced UI/UX tools, allowing me to craft visually compelling, highly functional interfaces. I blend systems thinking and creativity to produce designs that communicate clarity and strong visual identity. Here is a bit of my current rotation.
         </p>
 
         <div className="w-full overflow-x-hidden py-4" dir="ltr">
           <div
-            className="flex items-center gap-[12px] min-[1101px]:gap-[48px]"
+            className="flex items-center gap-3 min-[1101px]:gap-12"
             style={{
               width: "max-content",
               animation: "marquee 50s linear infinite",
@@ -572,7 +572,7 @@ export default function AboutSection() {
                 alt=""
                 width={90}
                 height={90}
-                className="w-[45px] h-[45px] min-[1101px]:w-[90px] min-[1101px]:h-[90px] shrink-0 object-contain"
+                className="w-11.25 h-11.25 min-[1101px]:w-22.5 min-[1101px]:h-22.5 shrink-0 object-contain"
               />
             ))}
           </div>
@@ -582,14 +582,14 @@ export default function AboutSection() {
       {/* =========================================================================
           FULL-WIDTH WRAPPER FOR THE BOTTOM DASHED DIVIDER
           ========================================================================= */}
-      <div className="w-full max-w-[1618px] mx-auto px-[21.5px] min-[810px]:px-[43px] min-[1101px]:px-[86px] pb-[36.5px] min-[810px]:pb-[73px] min-[1101px]:pb-[146px]">
+      <div className="w-full max-w-404.5 mx-auto px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5 pb-9.125 min-[810px]:pb-18.25 min-[1101px]:pb-36.5">
         <hr className="border-t border-dashed border-white/30" />
       </div>
 
       {/* =========================================================================
           SECTION 5: OFF-SCREEN & INSPIRATION
           ========================================================================= */}
-      <section className="w-full max-w-[1618px] mx-auto text-white leading-none pt-[36.5px] pb-[21.5px] px-[21.5px] min-[810px]:pt-[73px] min-[810px]:pb-[43px] min-[810px]:px-[43px] min-[1101px]:pt-[146px] min-[1101px]:pb-[86px] min-[1101px]:px-[86px]">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
         {/* Responsive Heading Setup matching structure of earlier sections */}
         <h2 className="text-[32px] min-[810px]:text-[28px] min-[1101px]:text-[40px] font-bold text-main-blue mb-6 min-[810px]:mb-8">
           Off-Screen & Inspiration
@@ -640,21 +640,21 @@ export default function AboutSection() {
               alt="Inspiration 1"
               width={523}
               height={394}
-              className="shrink-0 w-[393px] h-[296px] min-[1101px]:w-[523px] min-[1101px]:h-[394px] object-cover"
+              className="shrink-0 w-98.25 h-74 min-[1101px]:w-130.75 min-[1101px]:h-98.5 object-cover"
             />
             <Image
               src="/images/profile/bachir 2.svg"
               alt="Inspiration 2"
               width={523}
               height={394}
-              className="shrink-0 w-[393px] h-[296px] min-[1101px]:w-[523px] min-[1101px]:h-[394px] object-cover"
+              className="shrink-0 w-98.25 h-74 min-[1101px]:w-130.75 min-[1101px]:h-98.5 object-cover"
             />
             <Image
               src="/images/profile/bachir 3.svg"
               alt="Inspiration 3"
               width={523}
               height={394}
-              className="shrink-0 w-[393px] h-[296px] min-[1101px]:w-[523px] min-[1101px]:h-[394px] object-cover"
+              className="shrink-0 w-98.25 h-74 min-[1101px]:w-130.75 min-[1101px]:h-98.5 object-cover"
             />
           </div>
         </div>

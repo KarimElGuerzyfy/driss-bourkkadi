@@ -8,11 +8,11 @@ export default function LianovaBioCard() {
 
       {/* DESKTOP LAYOUT — hidden below 1200px */}
       <div className="hidden min-[1200px]:block">
-        <div className="w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-[870px]">
+        <div className="w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-217.5">
           <div className="flex flex-row items-center h-full">
 
             {/* Image Area — Left Column on Desktop */}
-            <div className="relative min-[1200px]:w-[924px] min-[1200px]:max-w-[924px] min-[1200px]:h-[616px] ml-12">
+            <div className="relative min-[1200px]:w-231 min-[1200px]:max-w-231 min-[1200px]:h-154 ml-12">
               <Image
                 src={linavobio.thumbnail}
                 alt={linavobio.title}
@@ -23,7 +23,7 @@ export default function LianovaBioCard() {
             </div>
 
             {/* Right Column — text + tags + button */}
-            <div className="flex flex-col justify-center min-[1200px]:w-[36%] min-[1200px]:h-[566px] shrink-0 pt-9">
+            <div className="flex flex-col justify-center min-[1200px]:w-[36%] min-[1200px]:h-141.5 shrink-0 pt-9">
 
               {/* Text Area */}
               <div className="flex flex-col ml-6">
@@ -81,7 +81,7 @@ export default function LianovaBioCard() {
           </div>
 
           {/* Image Area */}
-          <div className="relative w-full md:h-[423px]">
+          <div className="relative w-full md:h-105.75">
             <Image
               src={linavobio.thumbnail}
               alt={linavobio.title}
@@ -131,7 +131,7 @@ export default function LianovaBioCard() {
         <div className="overflow-hidden rounded-3xl bg-card-bg p-6">
 
           {/* Image Area */}
-          <div className="relative w-full h-[320px]">
+          <div className="relative w-full h-80">
             <Image
               src={linavobio.thumbnail}
               alt={linavobio.title}
