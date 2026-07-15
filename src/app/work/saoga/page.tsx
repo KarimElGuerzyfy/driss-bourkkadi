@@ -10,29 +10,94 @@ const saogaSection3Images = [
   "/images/projects/saoga/S3-03.svg",
   "/images/projects/saoga/S3-04.svg",
   "/images/projects/saoga/S3-05.svg",
+  "/images/projects/saoga/S3-06.svg",
+  "/images/projects/saoga/S3-07.svg",
+  "/images/projects/saoga/S3-08.svg",
+  "/images/projects/saoga/S3-09.svg",
+  "/images/projects/saoga/S3-10.svg",
+  "/images/projects/saoga/S3-11.svg",
+  "/images/projects/saoga/S3-12.svg",
+  "/images/projects/saoga/S3-13.svg",
+  "/images/projects/saoga/S3-14.svg",
+  "/images/projects/saoga/S3-15.svg",
+  "/images/projects/saoga/S3-16.svg",
 ];
+
+const saogaSection3Triple = [...saogaSection3Images, ...saogaSection3Images, ...saogaSection3Images];
 
 export default function SaogaPage() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const isPausedS3 = useRef(false);
+  const oneSetWidthS3 = useRef(0);
 
   useEffect(() => {
     const el = carouselRef.current;
     if (!el) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-      el.scrollLeft += e.deltaY;
+    let rafId: number;
+    let lastTime = performance.now();
+    const pxPerSecond = 40;
+    let ready = false;
+
+    const trySetup = () => {
+      const setWidth = el.scrollWidth / 3;
+      if (setWidth > 0) {
+        oneSetWidthS3.current = setWidth;
+        el.scrollLeft = setWidth;
+        ready = true;
+      }
     };
 
+    const pollId = setInterval(() => {
+      trySetup();
+      if (ready) clearInterval(pollId);
+    }, 100);
+    trySetup();
+
+    const tick = (now: number) => {
+      const delta = now - lastTime;
+      lastTime = now;
+      if (!isPausedS3.current && oneSetWidthS3.current > 0) {
+        el.scrollLeft += (pxPerSecond * delta) / 1000;
+        if (el.scrollLeft >= oneSetWidthS3.current * 2) {
+          el.scrollLeft -= oneSetWidthS3.current;
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY === 0 && e.deltaX === 0) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY !== 0 ? e.deltaY : e.deltaX;
+    };
     el.addEventListener("wheel", handleWheel, { passive: false });
+
+    const pause = () => {
+      isPausedS3.current = true;
+    };
+    const resume = () => {
+      isPausedS3.current = false;
+    };
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resume);
+
     return () => {
+      clearInterval(pollId);
+      cancelAnimationFrame(rafId);
       el.removeEventListener("wheel", handleWheel);
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resume);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend", resume);
     };
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-card-bg min-[810px]:bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-screen bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
       <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-10 min-[810px]:pt-16 min-[1101px]:pt-16 pb-16">
         {/* Logo wordmark */}
         <Image
@@ -163,14 +228,15 @@ export default function SaogaPage() {
             scrollbarWidth: "none",
             msOverflowStyle: "none",
             WebkitOverflowScrolling: "touch",
+            scrollBehavior: "auto",
           }}
         >
-          <div className="flex w-max gap-4 min-[810px]:gap-6">
-            {saogaSection3Images.map((src, index) => (
+          <div className="flex w-max gap-4 min-[810px]:gap-3">
+            {saogaSection3Triple.map((src, index) => (
               <Image
-                key={src}
+                key={index}
                 src={src}
-                alt={`SAOGA product photography ${index + 1}`}
+                alt={`SAOGA product photography ${(index % saogaSection3Images.length) + 1}`}
                 width={277}
                 height={417}
                 className="shrink-0 w-40 h-auto min-[810px]:w-55 min-[1101px]:w-69.25 rounded-2xl object-cover"
@@ -208,23 +274,24 @@ export default function SaogaPage() {
             className="w-full h-auto"
           />
         </div>
+
+        {/* Back to deck */}
+        <div className="mt-6 flex justify-end">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-2 text-main-blue font-bold text-base uppercase tracking-wide cursor-pointer"
+          >
+            <Image
+              src="/icons/left-arrow.svg"
+              alt=""
+              width={16}
+              height={16}
+              className="rotate-90"
+            />
+            Back to deck
+          </button>
+        </div>
       </div>
-
-      {/* Divider */}
-
-{/* Section 5 */}
-<div className="relative max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-16 min-[810px]:pt-16 min-[1101px]:pt-16 pb-16">
-  {/* Centered visual */}
-  <div className="relative z-10 flex justify-center">
-    <Image
-      src="/images/projects/saoga/S5-01.svg"
-      alt="SAOGA lifestyle visual"
-      width={503}
-      height={288}
-      className="w-64 min-[810px]:w-100 min-[1101px]:w-180 h-auto"
-    />
-  </div>
-</div>
     </section>
   );
 }

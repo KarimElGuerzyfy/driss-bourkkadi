@@ -19,6 +19,22 @@ const palette = [
 
 const paletteMarquee = [...palette, ...palette, ...palette, ...palette];
 
+const s5Images = [
+  "/images/projects/linova/S5-01.svg",
+  "/images/projects/linova/S5-02.svg",
+  "/images/projects/linova/S5-03.svg",
+  "/images/projects/linova/S5-04.svg",
+  "/images/projects/linova/S5-05.svg",
+  "/images/projects/linova/S5-06.svg",
+  "/images/projects/linova/S5-07.svg",
+  "/images/projects/linova/S5-08.svg",
+  "/images/projects/linova/S5-09.svg",
+  "/images/projects/linova/S5-10.svg",
+  "/images/projects/linova/S5-11.svg",
+];
+
+const s5Triple = [...s5Images, ...s5Images, ...s5Images];
+
 export default function LinovaBioPage() {
   const [isExpandedS2, setIsExpandedS2] = useState(false);
   const [hasOverflowS2, setHasOverflowS2] = useState(false);
@@ -39,8 +55,79 @@ export default function LinovaBioPage() {
     return () => window.removeEventListener("resize", checkOverflow);
   }, [isExpandedS2]);
 
+  const carouselRefS5 = useRef<HTMLDivElement>(null);
+  const isPausedS5 = useRef(false);
+  const oneSetWidthS5 = useRef(0);
+
+  useEffect(() => {
+    const el = carouselRefS5.current;
+    if (!el) return;
+
+    let rafId: number;
+    let lastTime = performance.now();
+    const pxPerSecond = 40;
+    let ready = false;
+
+    const trySetup = () => {
+      const setWidth = el.scrollWidth / 3;
+      if (setWidth > 0) {
+        oneSetWidthS5.current = setWidth;
+        el.scrollLeft = setWidth;
+        ready = true;
+      }
+    };
+
+    // Poll briefly until images have real dimensions (SVGs via next/image can report 0 width for a frame or two)
+    const pollId = setInterval(() => {
+      trySetup();
+      if (ready) clearInterval(pollId);
+    }, 100);
+    trySetup();
+
+    const tick = (now: number) => {
+      const delta = now - lastTime;
+      lastTime = now;
+      if (!isPausedS5.current && oneSetWidthS5.current > 0) {
+        el.scrollLeft += (pxPerSecond * delta) / 1000;
+        if (el.scrollLeft >= oneSetWidthS5.current * 2) {
+          el.scrollLeft -= oneSetWidthS5.current;
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY === 0 && e.deltaX === 0) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY !== 0 ? e.deltaY : e.deltaX;
+    };
+    el.addEventListener("wheel", handleWheel, { passive: false });
+
+    const pause = () => {
+      isPausedS5.current = true;
+    };
+    const resume = () => {
+      isPausedS5.current = false;
+    };
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resume);
+
+    return () => {
+      clearInterval(pollId);
+      cancelAnimationFrame(rafId);
+      el.removeEventListener("wheel", handleWheel);
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resume);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend", resume);
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-screen bg-card-bg min-[810px]:bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-screen bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
       <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-10 min-[810px]:pt-16 pb-16">
         {/* Logo wordmark */}
         <Image
@@ -195,6 +282,140 @@ export default function LinovaBioPage() {
             {isExpandedS2 ? "view less" : "read more"}
           </button>
         )}
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-[#ABE3EE]/30" />
+
+      {/* Section 3 */}
+      <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-16 pb-16">
+        {/* Title */}
+        <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[1101px]:text-[32px]">
+          Print & Label Engineering
+        </h2>
+
+        {/* Body copy */}
+        <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+          Complete print-ready design. Engineered all outer box packaging
+          covers and bottle labels from scratch. Meticulously structured
+          typographic hierarchies, ingredient spacing, and color separations
+          optimized for premium tactile finishes.
+        </p>
+
+        {/* Section 3 image */}
+        <div className="mt-4 overflow-hidden rounded-2xl">
+          <Image
+            src="/images/projects/linova/S3-01.svg"
+            alt="Linova Bio product label design"
+            width={1534}
+            height={582}
+            className="w-full h-auto"
+          />
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-[#ABE3EE]/30" />
+
+      {/* Section 4 */}
+      <div className="relative max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-16 pb-16 overflow-visible">
+        <div className="relative z-10">
+          {/* Title */}
+          <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[1101px]:text-[32px]">
+            High-Fidelity 3D Mockups
+          </h2>
+
+          {/* Body copy */}
+          <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+            Complete print-ready design. Engineered all outer box packaging
+            covers and bottle labels from scratch. Meticulously structured
+            typographic hierarchies, ingredient spacing, and color separations
+            optimized for premium tactile finishes.
+          </p>
+        </div>
+
+        {/* Background graphic */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-32 min-[810px]:top-40 min-[1101px]:top-48 z-0 w-[442px] max-w-full min-[810px]:w-[590px] min-[1101px]:w-[785px] pointer-events-none">
+          <Image
+            src="/images/projects/linova/S4-02.svg"
+            alt=""
+            width={746}
+            height={707}
+            className="w-full h-auto object-contain opacity-30"
+          />
+        </div>
+
+        {/* Foreground bottle mockup */}
+        <div className="relative z-10 flex justify-center mt-8 min-[810px]:mt-10">
+          <Image
+            src="/images/projects/linova/S4-01.svg"
+            alt="Linova Bio Colon Pure bottle mockup"
+            width={398}
+            height={541}
+            className="w-[224px] h-[305px] min-[810px]:w-[298px] min-[810px]:h-[405px] min-[1101px]:w-[398px] min-[1101px]:h-[541px]"
+          />
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-[#ABE3EE]/30" />
+
+      {/* Section 5 */}
+      <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-16 pb-16">
+        {/* Title */}
+        <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[1101px]:text-[32px]">
+          AI Lifestyle Expansion
+        </h2>
+
+        {/* Body copy */}
+        <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+          Hyper-realistic environments. Used generative AI tools to
+          seamlessly blend the 3D rendered assets into luxury lifestyle
+          scenes—placing the products on wet marble, sunlit stone, or amidst
+          organic botanical elements for marketing campaigns.
+        </p>
+
+        {/* Carousel */}
+        <div
+          ref={carouselRefS5}
+          className="mt-6 w-full overflow-x-auto select-none scrollbar-hide"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+            scrollBehavior: "auto",
+          }}
+        >
+          <div className="flex w-max gap-4 min-[810px]:gap-3">
+            {s5Triple.map((src, index) => (
+              <Image
+                key={index}
+                src={src}
+                alt={`Linova Bio lifestyle scene ${(index % s5Images.length) + 1}`}
+                width={300}
+                height={400}
+                className="shrink-0 w-40 min-[810px]:w-56 min-[1101px]:w-64 h-auto rounded-2xl object-cover"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Back to deck */}
+        <div className="mt-6 flex justify-end">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-2 text-main-blue font-bold text-base uppercase tracking-wide cursor-pointer"
+          >
+            <Image
+              src="/icons/left-arrow.svg"
+              alt=""
+              width={16}
+              height={16}
+              className="rotate-90"
+            />
+            Back to deck
+          </button>
+        </div>
       </div>
     </section>
   );
