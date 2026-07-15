@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { linavobio } from "@/lib/projects";
+import { linovabio } from "@/lib/projects";
 
-export default function LianovaBioCard() {
+export default function LinovaBioCard() {
   return (
     <div className="px-6 min-[1200px]:px-21.5">
 
@@ -14,8 +14,8 @@ export default function LianovaBioCard() {
             {/* Image Area — Left Column on Desktop */}
             <div className="relative min-[1200px]:w-231 min-[1200px]:max-w-231 min-[1200px]:h-154 ml-12">
               <Image
-                src={linavobio.thumbnail}
-                alt={linavobio.title}
+                src={linovabio.thumbnail}
+                alt={linovabio.title}
                 fill
                 priority
                 className="object-contain"
@@ -28,17 +28,17 @@ export default function LianovaBioCard() {
               {/* Text Area */}
               <div className="flex flex-col ml-6">
                 <h3 className="text-3xl font-bold leading-tight text-main-blue mb-12">
-                  <span className="block leading-none mb-2">{linavobio.title}</span>
-                  <span className="block leading-none mb-2">{linavobio.subtitle}</span>
-                  {linavobio.subtitle2 && <span className="block leading-none">{linavobio.subtitle2}</span>}
+                  <span className="block leading-none mb-2">{linovabio.title}</span>
+                  <span className="block leading-none mb-2">{linovabio.subtitle}</span>
+                  {linovabio.subtitle2 && <span className="block leading-none">{linovabio.subtitle2}</span>}
                 </h3>
-                <p className="text-2xl font-bold text-white leading-none mb-3">{linavobio.description1}</p>
-                <p className="text-xl text-white leading-none mb-3">{linavobio.description2}</p>
+                <p className="text-2xl font-bold text-white leading-none mb-3">{linovabio.description1}</p>
+                <p className="text-xl text-white leading-none mb-3">{linovabio.description2}</p>
               </div>
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2.5 mb-6 ml-6">
-                {linavobio.tags.map((tag, i) => (
+                {linovabio.tags.map((tag, i) => (
                   <span
                     key={i}
                     className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white"
@@ -51,7 +51,7 @@ export default function LianovaBioCard() {
               {/* Button */}
               <div className="ml-6 mt-auto">
                 <Link
-                  href="/work/linavobio"
+                  href="/work/linovabio"
                   className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03]"
                 >
                   Read Case Study
@@ -72,19 +72,19 @@ export default function LianovaBioCard() {
           {/* Text Area */}
           <div className="flex flex-col p-6 md:px-6 md:py-9">
             <h3 className="text-3xl font-bold leading-tight text-main-blue mb-12">
-              <span className="block leading-none mb-2">{linavobio.title}</span>
-              <span className="block leading-none mb-2">{linavobio.subtitle}</span>
-              {linavobio.subtitle2 && <span className="block leading-none">{linavobio.subtitle2}</span>}
+              <span className="block leading-none mb-2">{linovabio.title}</span>
+              <span className="block leading-none mb-2">{linovabio.subtitle}</span>
+              {linovabio.subtitle2 && <span className="block leading-none">{linovabio.subtitle2}</span>}
             </h3>
-            <p className="text-2xl font-bold text-white leading-none mb-3">{linavobio.description1}</p>
-            <p className="text-xl text-white Landau-none mb-3">{linavobio.description2}</p>
+            <p className="text-2xl font-bold text-white leading-none mb-3">{linovabio.description1}</p>
+            <p className="text-xl text-white Landau-none mb-3">{linovabio.description2}</p>
           </div>
 
           {/* Image Area */}
           <div className="relative w-full md:h-105.75">
             <Image
-              src={linavobio.thumbnail}
-              alt={linavobio.title}
+              src={linovabio.thumbnail}
+              alt={linovabio.title}
               fill
               priority
               className="object-contain"
@@ -93,7 +93,7 @@ export default function LianovaBioCard() {
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2.5 px-6 py-6">
-            {linavobio.tags.map((tag, i) => (
+            {linovabio.tags.map((tag, i) => (
               <span
                 key={i}
                 className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white"
@@ -106,7 +106,7 @@ export default function LianovaBioCard() {
           {/* Button */}
           <div className="px-6 pb-8">
             <Link
-              href="/work/linavobio"
+              href="/work/linovabio"
               className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03]"
             >
               Read Case Study
@@ -122,9 +122,9 @@ export default function LianovaBioCard() {
 
         {/* Title — outside container */}
         <h3 className="text-2xl font-bold leading-tight text-main-blue mb-6">
-          <span className="block leading-none mb-2">{linavobio.title}</span>
-          <span className="block leading-none mb-2">{linavobio.subtitle}</span>
-          {linavobio.subtitle2 && <span className="block leading-none">{linavobio.subtitle2}</span>}
+          <span className="block leading-none mb-2">{linovabio.title}</span>
+          <span className="block leading-none mb-2">{linovabio.subtitle}</span>
+          {linovabio.subtitle2 && <span className="block leading-none">{linovabio.subtitle2}</span>}
         </h3>
 
         {/* Card container */}
@@ -133,8 +133,8 @@ export default function LianovaBioCard() {
           {/* Image Area */}
           <div className="relative w-full h-80">
             <Image
-              src={linavobio.thumbnail}
-              alt={linavobio.title}
+              src={linovabio.thumbnail}
+              alt={linovabio.title}
               fill
               priority
               className="object-contain"
@@ -156,7 +156,7 @@ export default function LianovaBioCard() {
 
         {/* Descriptions — outside container, below */}
         <div className="mt-6">
-          <p className="text-2xl font-bold text-white leading-none mb-3">{linavobio.description1}</p>
+          <p className="text-2xl font-bold text-white leading-none mb-3">{linovabio.description1}</p>
         </div>
 
       </div>

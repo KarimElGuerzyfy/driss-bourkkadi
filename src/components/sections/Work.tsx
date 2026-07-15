@@ -1,5 +1,5 @@
 import SaogaCard from "@/components/ui/cards/SaogaCard";
-import LianovaBioCard from "@/components/ui/cards/LianovaBioCard";
+import LinovaBioCard from "@/components/ui/cards/LinovaBioCard";
 import AminaBennaniCard from "@/components/ui/cards/AminaBennaniCard";
 import SkillsMarquee from "@/components/ui/SkillsMarquee";
 
@@ -10,7 +10,7 @@ export default function Work() {
       <div className="flex flex-col">
         <SaogaCard />
         <SkillsMarquee />
-        <LianovaBioCard />
+        <LinovaBioCard />
         <SkillsMarquee />
         <AminaBennaniCard />
         <SkillsMarquee />

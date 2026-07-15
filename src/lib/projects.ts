@@ -17,7 +17,7 @@ export const saoga: ProjectData = {
   thumbnail: "/images/projects/saoga.svg",
 };
 
-export const linavobio: ProjectData = {
+export const linovabio: ProjectData = {
   title: "LINOVA BIO",
   subtitle: "Linova Health & Cosmetics",
   subtitle2: "Comprehensive Visual Identity & Design System",
