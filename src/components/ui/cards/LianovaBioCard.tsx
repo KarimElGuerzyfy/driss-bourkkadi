@@ -144,7 +144,7 @@ export default function LianovaBioCard() {
           {/* Button */}
           <div className="">
             <Link
-              href="/work/linavobio"
+              href="/work/linovabio"
               className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03]"
             >
               Read Case Study
