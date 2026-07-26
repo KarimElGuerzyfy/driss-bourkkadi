@@ -25,7 +25,7 @@ export default function SkillsMarquee() {
         {allSkills.map((skill, index) => (
           <span
             key={index}
-            className="whitespace-nowrap text-base font-bold capitalize text-text-marquee/50"
+            className="whitespace-nowrap text-base font-bold capitalize text-text-marquee/50 [text-box:trim-both_cap_alphabetic]"
           >
             {skill}
           </span>

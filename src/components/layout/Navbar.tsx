@@ -53,8 +53,8 @@ export default function Navbar() {
                 href={link.href}
                 className={
                   isActive(link.href)
-                    ? "text-main-blue"
-                    : "text-white transition-colors hover:text-main-blue"
+                    ? "glow-on-hover px-4 py-2 text-main-blue [text-box:trim-both_cap_alphabetic]"
+                    : "glow-on-hover px-4 py-2 text-white transition-colors hover:text-main-blue [text-box:trim-both_cap_alphabetic]"
                 }
               >
                 {link.label}

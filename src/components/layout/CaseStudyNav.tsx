@@ -8,7 +8,7 @@ export default function CaseStudyNav() {
         <Link
           href="/#work"
           aria-label="Back to work portfolio"
-          className="flex items-center gap-1 text-main-blue font-bold text-sm min-[810px]:text-base"
+          className="flex items-center gap-1 text-main-blue font-bold text-sm min-[810px]:text-base [text-box:trim-both_cap_alphabetic]"
         >
           BACK
           <Image

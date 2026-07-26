@@ -73,7 +73,7 @@ export default function Hero() {
           <a
             href="/cv.pdf"
             download
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-btn-blue bg-transparent px-6 py-2 text-lg font-bold text-btn-blue transition-transform duration-200 ease-out hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-transparent px-6 py-2 text-lg font-bold text-btn-blue transition-transform duration-200 ease-out hover:scale-[1.03] [background:linear-gradient(#000,#000)_padding-box,linear-gradient(to_right,#7DD1E4,#4D00FF)_border-box] [text-box:trim-both_cap_alphabetic]"
           >
             Download CV
             <Image src="/icons/download-arrow.svg" alt="" width={14} height={14} />
@@ -85,7 +85,7 @@ export default function Hero() {
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-col gap-3 rounded-2xl border border-btn-blue px-3 py-4"
+              className="flex flex-col gap-3 rounded-2xl border-t border-r border-transparent px-3 py-4 [background:linear-gradient(#000,#000)_padding-box,linear-gradient(to_bottom_right,#7DD1E4,#4D00FF)_border-box]"
             >
               <p className="text-[24px] text-white whitespace-nowrap font-bold leading-none [text-box:trim-both_cap_alphabetic]">{stat.value}</p>
               <p className="text-[16px] text-white whitespace-nowrap [text-box:trim-both_cap_alphabetic]">
