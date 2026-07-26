@@ -70,7 +70,7 @@ export default function ContactPage() {
       {/* Email button */}
       <Link
         href={`mailto:${EMAIL_ADDRESS}`}
-        className="mt-3 inline-flex items-center gap-2 rounded-[10px] border border-transparent bg-black px-6 py-2 font-bold transition-transform hover:scale-[1.03] text-[20px] min-[810px]:text-[24px] min-[1101px]:text-[28px] [background:linear-gradient(#000,#000)_padding-box,linear-gradient(to_right,#7DD1E4,#4D00FF)_border-box]"
+        className="mt-3 inline-flex items-center gap-2 rounded-[10px] border border-transparent bg-black px-6 py-2 font-bold transition-transform hover:scale-[1.03] text-[20px] min-[810px]:text-[24px] min-[1101px]:text-[28px] [background:linear-gradient(#000,#000)_padding-box,linear-gradient(to_right,#7DD1E4,#4D00FF)_border-box] [text-box:trim-both_cap_alphabetic]"
       >
         <Image
           src="/images/socials/email0border.svg"

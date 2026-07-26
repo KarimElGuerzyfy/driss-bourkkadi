@@ -103,7 +103,7 @@ export default function AminaBennaniPage() {
     <button
       key={label}
       onClick={() => scrollToSection(index)}
-      className={`w-full flex items-center text-left font-bold text-[27px] leading-tight rounded-2xl px-3 py-2 transition-colors ${
+      className={`w-full flex items-center text-left font-bold text-[27px] leading-tight rounded-2xl px-3 py-2 transition-colors [text-box:trim-both_cap_alphabetic] ${
         activeSectionIndex === index
           ? "bg-black text-main-blue"
           : "bg-[#282828] text-[#F1FAFC]/30"

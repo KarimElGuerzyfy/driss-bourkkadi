@@ -29,7 +29,7 @@ export default function SaogaCard() {
                 {saoga.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white"
+                    className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
                   >
                     {tag}
                   </span>
@@ -40,7 +40,7 @@ export default function SaogaCard() {
               <div className="ml-6 mt-auto">
                 <Link
                   href="/work/saoga"
-                  className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03]"
+                  className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
                 >
                   Read Case Study
                   <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -94,7 +94,7 @@ export default function SaogaCard() {
             {saoga.tags.map((tag, i) => (
               <span
                 key={i}
-                className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white"
+                className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
               >
                 {tag}
               </span>
@@ -105,7 +105,7 @@ export default function SaogaCard() {
           <div className="px-6 pb-8">
             <Link
               href="/work/saoga"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -142,7 +142,7 @@ export default function SaogaCard() {
           <div className="">
             <Link
               href="/work/saoga"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />

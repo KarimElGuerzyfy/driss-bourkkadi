@@ -237,7 +237,7 @@ export default function AboutSection() {
             <a
               href="/cv.pdf"
               download
-              className="inline-flex font-bold items-center justify-center gap-2 rounded-xl bg-btn-blue px-4 py-1.5 text-base text-black transition-transform duration-200 ease-out hover:scale-[1.03]"
+              className="inline-flex font-bold items-center justify-center gap-2 rounded-xl bg-btn-blue px-4 py-1.5 text-base text-black transition-transform duration-200 ease-out hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Download CV
               <Image
@@ -311,7 +311,7 @@ export default function AboutSection() {
               <a
                 href="/cv.pdf"
                 download
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-btn-blue px-4 py-3 text-[18px] min-[1101px]:text-[24px] text-black transition-transform duration-200 ease-out hover:scale-[1.03]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-btn-blue px-4 py-3 text-[18px] min-[1101px]:text-[24px] text-black transition-transform duration-200 ease-out hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
               >
                 Download CV
                 <Image

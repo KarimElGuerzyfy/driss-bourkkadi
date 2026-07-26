@@ -65,15 +65,15 @@ export default function Hero() {
         <div className="flex flex-col gap-2 min-[810px]:flex-row">
           <Link
             href="/about"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-btn-blue px-6 py-2 text-lg font-bold text-black transition-transform duration-200 ease-out hover:scale-[1.03]"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-btn-blue px-6 py-2 text-lg font-bold text-black transition-transform duration-200 ease-out hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
           >
             About Me
-            <Image src="/icons/arrow.svg" alt="" width={16} height={16} />
+            <Image src="/icons/arrow.svg" alt="" width={11} height={11} />
           </Link>
           <a
             href="/cv.pdf"
             download
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-btn-blue bg-transparent px-6 py-2 text-lg font-bold text-btn-blue transition-transform duration-200 ease-out hover:scale-[1.03]"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-btn-blue bg-transparent px-6 py-2 text-lg font-bold text-btn-blue transition-transform duration-200 ease-out hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
           >
             Download CV
             <Image src="/icons/download-arrow.svg" alt="" width={16} height={16} />
@@ -87,8 +87,8 @@ export default function Hero() {
               key={stat.label}
               className="rounded-2xl border border-btn-blue px-4 py-2"
             >
-              <p className="text-[24px] font-bold text-white whitespace-nowrap leading-none">{stat.value}</p>
-              <p className="text-[16px] font-bold text-white whitespace-nowrap">
+              <p className="text-[24px] font-bold text-white whitespace-nowrap leading-none [text-box:trim-both_cap_alphabetic]">{stat.value}</p>
+              <p className="text-[16px] font-bold text-white whitespace-nowrap [text-box:trim-both_cap_alphabetic]">
                 <span className="text-main-blue">|</span> {stat.label}
               </p>
             </div>

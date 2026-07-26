@@ -158,7 +158,7 @@ export default function SaogaPage() {
           {saoga.tags.map((tag) => (
             <span
               key={tag}
-              className="border border-white rounded-xl px-2 py-2 text-white font-bold text-[14px] min-[810px]:text-base whitespace-nowrap"
+              className="border border-white rounded-xl px-2 py-2 text-white font-bold text-[14px] min-[810px]:text-base whitespace-nowrap [text-box:trim-both_cap_alphabetic]"
             >
               {tag}
             </span>

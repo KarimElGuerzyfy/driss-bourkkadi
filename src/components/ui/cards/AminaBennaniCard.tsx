@@ -29,7 +29,7 @@ export default function AminaBennaniCard() {
                 {aminabennani.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white"
+                    className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
                   >
                     {tag}
                   </span>
@@ -40,7 +40,7 @@ export default function AminaBennaniCard() {
               <div className="flex gap-2.5 ml-6 mt-auto">
                 <Link
                   href="/work/aminabennani"
-                  className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03]"
+                  className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
                 >
                   Read Case Study
                   <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -49,7 +49,7 @@ export default function AminaBennaniCard() {
                   href="https://local-business-template-rouge.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-xl bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03]"
+                  className="inline-flex items-center gap-1 rounded-xl bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
                 >
                   View Website
                   <Image src="/icons/r-arrow-light.svg" alt="" width={18} height={18} />
@@ -103,7 +103,7 @@ export default function AminaBennaniCard() {
             {aminabennani.tags.map((tag, i) => (
               <span
                 key={i}
-                className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white"
+                className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
               >
                 {tag}
               </span>
@@ -114,7 +114,7 @@ export default function AminaBennaniCard() {
           <div className="flex gap-2.5 px-6 pb-8">
             <Link
               href="/work/aminabennani"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -123,7 +123,7 @@ export default function AminaBennaniCard() {
               href="https://local-business-template-rouge.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-xl bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center gap-1 rounded-xl bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               View Website
               <Image src="/icons/r-arrow-light.svg" alt="" width={18} height={18} />
@@ -160,7 +160,7 @@ export default function AminaBennaniCard() {
           <div className="flex gap-2.5">
             <Link
               href="/work/aminabennani"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -169,7 +169,7 @@ export default function AminaBennaniCard() {
               href="https://local-business-template-rouge.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-xl bg-black px-3 py-2 font-bold text-white text-sm transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center gap-1 rounded-xl bg-black px-3 py-2 font-bold text-white text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               View Website
               <Image src="/icons/r-arrow-light.svg" alt="" width={18} height={18} />
