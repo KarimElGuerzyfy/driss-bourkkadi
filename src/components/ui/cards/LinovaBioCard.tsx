@@ -8,11 +8,11 @@ export default function LinovaBioCard() {
 
       {/* DESKTOP LAYOUT — hidden below 1200px */}
       <div className="hidden min-[1200px]:block">
-        <div className="w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-217.5">
+        <div className="relative w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-217.5">
           <div className="flex flex-row items-center h-full">
 
             {/* Image Area — Left Column on Desktop */}
-            <div className="relative min-[1200px]:w-231 min-[1200px]:max-w-231 min-[1200px]:h-154 ml-12">
+            <div className="relative min-[1200px]:w-[794.35px] min-[1200px]:max-w-[794.35px] min-[1200px]:h-[483.76px] ml-12">
               <Image
                 src={linovabio.thumbnail}
                 alt={linovabio.title}
@@ -22,8 +22,8 @@ export default function LinovaBioCard() {
               />
             </div>
 
-            {/* Right Column — text + tags + button */}
-            <div className="flex flex-col justify-center min-[1200px]:w-[36%] min-[1200px]:h-141.5 shrink-0 pt-9">
+            {/* Right Column — text + tags */}
+            <div className="flex flex-col  min-[1200px]:w-[609px] shrink-0 min-[1200px]:h-[732px] min-[1200px]:pt-[100px] min-[1200px]:pb-[64px] min-[1200px]:ml-12">
 
               {/* Text Area */}
               <div className="flex flex-col ml-6">
@@ -32,35 +32,35 @@ export default function LinovaBioCard() {
                   <span className="block leading-none mb-2">{linovabio.subtitle}</span>
                   {linovabio.subtitle2 && <span className="block leading-none">{linovabio.subtitle2}</span>}
                 </h3>
-                <p className="text-2xl font-bold text-white leading-none mb-3">{linovabio.description1}</p>
+                <p className="text-[24px] font-bold text-white leading-none mb-26">{linovabio.description1}</p>
                 <p className="text-xl text-white leading-none mb-3">{linovabio.description2}</p>
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2.5 mb-6 ml-6">
+              <div className="flex flex-wrap gap-2.5 mb-12 ml-6">
                 {linovabio.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
+                    className="rounded-lg border border-white px-3 py-3 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* Button */}
-              <div className="ml-6 mt-auto">
-                <Link
-                  href="/work/linovabio"
-                  className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
-                >
-                  Read Case Study
-                  <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
-                </Link>
-              </div>
-
             </div>
 
+          </div>
+
+          {/* Button — inside the card, bottom-left corner */}
+          <div className="absolute bottom-12 left-12">
+            <Link
+              href="/work/linovabio"
+              className="inline-flex items-center gap-1 rounded-lg bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+            >
+              Read Case Study
+              <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
+            </Link>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ export default function LinovaBioCard() {
               {linovabio.subtitle2 && <span className="block leading-none">{linovabio.subtitle2}</span>}
             </h3>
             <p className="text-2xl font-bold text-white leading-none mb-3">{linovabio.description1}</p>
-            <p className="text-xl text-white Landau-none mb-3">{linovabio.description2}</p>
+            <p className="text-xl text-white leading-none mb-3">{linovabio.description2}</p>
           </div>
 
           {/* Image Area */}
@@ -96,7 +96,7 @@ export default function LinovaBioCard() {
             {linovabio.tags.map((tag, i) => (
               <span
                 key={i}
-                className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
+                className="rounded-lg border border-white px-3 py-3 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
               >
                 {tag}
               </span>
@@ -107,7 +107,7 @@ export default function LinovaBioCard() {
           <div className="px-6 pb-8">
             <Link
               href="/work/linovabio"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+              className="inline-flex items-center gap-1 rounded-lg bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -145,7 +145,7 @@ export default function LinovaBioCard() {
           <div className="">
             <Link
               href="/work/linovabio"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+              className="flex w-full items-center justify-center mt-4 gap-1 rounded-lg bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
