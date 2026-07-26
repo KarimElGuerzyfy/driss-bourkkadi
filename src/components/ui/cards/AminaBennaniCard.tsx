@@ -9,13 +9,13 @@ export default function AminaBennaniCard() {
       {/* DESKTOP LAYOUT — hidden below 1200px */}
       <div className="hidden min-[1200px]:block">
         <div className="w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-237.5">
-          <div className="flex flex-row items-center h-full">
+          <div className="flex flex-row items-center h-full px-6 min-[1200px]:px-12">
 
             {/* Left Column — text + tags + buttons */}
             <div className="flex flex-col justify-center min-[1200px]:w-[36%] min-[1200px]:h-141.5 shrink-0 pt-9">
 
               {/* Text Area */}
-              <div className="flex flex-col ml-6">
+              <div className="flex flex-col">
                 <h3 className="text-[28px] font-bold leading-none text-main-blue">
                   <span className="block leading-none">{aminabennani.title}</span>
                   <span className="block leading-none">{aminabennani.subtitle}</span>
@@ -25,11 +25,11 @@ export default function AminaBennaniCard() {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2.5 mb-6 ml-6">
+              <div className="flex flex-wrap gap-2.5 mb-6">
                 {aminabennani.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
+                    className="rounded-lg border border-white px-3 py-3 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
                   >
                     {tag}
                   </span>
@@ -37,10 +37,10 @@ export default function AminaBennaniCard() {
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-2.5 ml-6 mt-auto">
+              <div className="flex gap-2.5 mt-auto">
                 <Link
                   href="/work/aminabennani"
-                  className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+                  className="inline-flex items-center gap-1 rounded-lg bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
                 >
                   Read Case Study
                   <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -49,7 +49,7 @@ export default function AminaBennaniCard() {
                   href="https://local-business-template-rouge.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-xl bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+                  className="inline-flex items-center gap-1 rounded-lg bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
                 >
                   View Website
                   <Image src="/icons/r-arrow-light.svg" alt="" width={18} height={18} />
@@ -59,7 +59,7 @@ export default function AminaBennaniCard() {
             </div>
 
             {/* Image Area */}
-            <div className="relative flex-1 min-[1200px]:h-[714px] mr-12">
+            <div className="relative flex-1 min-[1200px]:h-[714px]">
               <Image
                 src={aminabennani.thumbnail}
                 alt={aminabennani.title}
@@ -75,10 +75,10 @@ export default function AminaBennaniCard() {
 
       {/* TABLET LAYOUT — 768px to 1199px */}
       <div className="hidden md:max-[1199px]:flex flex-col">
-        <div className="w-full overflow-hidden rounded-3xl bg-card-bg">
+        <div className="w-full overflow-hidden rounded-3xl bg-card-bg px-6">
 
           {/* Text Area */}
-          <div className="flex flex-col px-6 pt-6">
+          <div className="flex flex-col pt-6">
             <h3 className="text-3xl font-bold leading-tight text-main-blue">
               <span className="block leading-none">{aminabennani.title}</span>
               <span className="block leading-none">{aminabennani.subtitle}</span>
@@ -99,11 +99,11 @@ export default function AminaBennaniCard() {
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2.5 px-6 pb-6 pr-40">
+          <div className="flex flex-wrap gap-2.5 pb-6">
             {aminabennani.tags.map((tag, i) => (
               <span
                 key={i}
-                className="rounded-xl border border-white px-3 py-1.5 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
+                className="rounded-lg border border-white px-3 py-3 text-base font-bold text-white [text-box:trim-both_cap_alphabetic]"
               >
                 {tag}
               </span>
@@ -111,10 +111,10 @@ export default function AminaBennaniCard() {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-2.5 px-6 pb-8">
+          <div className="flex gap-2.5 pb-8">
             <Link
               href="/work/aminabennani"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+              className="inline-flex items-center gap-1 rounded-lg bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -123,7 +123,7 @@ export default function AminaBennaniCard() {
               href="https://local-business-template-rouge.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-xl bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+              className="inline-flex items-center gap-1 rounded-lg bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               View Website
               <Image src="/icons/r-arrow-light.svg" alt="" width={18} height={18} />
@@ -156,11 +156,11 @@ export default function AminaBennaniCard() {
             />
           </div>
 
-          {/* Button */}
-          <div className="flex gap-2.5">
+          {/* Buttons — side by side, each half width, filling the row */}
+          <div className="flex gap-2.5 mt-4">
             <Link
               href="/work/aminabennani"
-              className="inline-flex items-center gap-1 rounded-xl bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+              className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-btn-blue px-3 py-2 font-bold text-black text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               Read Case Study
               <Image src="/icons/r-arrow.svg" alt="" width={18} height={18} />
@@ -169,7 +169,7 @@ export default function AminaBennaniCard() {
               href="https://local-business-template-rouge.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-xl bg-black px-3 py-2 font-bold text-white text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
+              className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-black px-3 py-2 font-bold text-white text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
             >
               View Website
               <Image src="/icons/r-arrow-light.svg" alt="" width={18} height={18} />

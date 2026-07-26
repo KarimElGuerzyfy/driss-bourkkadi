@@ -9,13 +9,13 @@ export default function SaogaCard() {
       {/* DESKTOP LAYOUT — hidden below 1200px */}
       <div className="hidden min-[1200px]:block">
         <div className="w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-217.5">
-          <div className="flex flex-row items-center h-full">
+          <div className="flex flex-row items-center h-full px-6 min-[1200px]:px-12">
 
             {/* Left Column — text + tags + button */}
             <div className="flex flex-col justify-center min-[1200px]:w-[36%] min-[1200px]:h-141.5 shrink-0 pt-9">
 
               {/* Text Area */}
-              <div className="flex flex-col ml-6">
+              <div className="flex flex-col">
                 <h3 className="text-3xl font-bold leading-tight text-main-blue mb-12">
                   <span className="block leading-none mb-2">{saoga.title}</span>
                   <span className="block leading-none">{saoga.subtitle}</span>
@@ -25,7 +25,7 @@ export default function SaogaCard() {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2.5 mb-12 ml-6">
+              <div className="flex flex-wrap gap-2.5 mb-12">
                 {saoga.tags.map((tag, i) => (
                   <span
                     key={i}
@@ -37,7 +37,7 @@ export default function SaogaCard() {
               </div>
 
               {/* Button */}
-              <div className="ml-6">
+              <div className="">
                 <Link
                   href="/work/saoga"
                   className="inline-flex items-center gap-1 rounded-lg bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
@@ -50,7 +50,7 @@ export default function SaogaCard() {
             </div>
 
             {/* Image Area */}
-            <div className="relative min-[1200px]:w-231 min-[1200px]:max-w-231 min-[1200px]:h-154 mr-12">
+            <div className="relative min-[1200px]:w-231 min-[1200px]:max-w-231 min-[1200px]:h-154">
               <Image
                 src={saoga.thumbnail}
                 alt={saoga.title}
@@ -66,10 +66,10 @@ export default function SaogaCard() {
 
       {/* TABLET LAYOUT — 768px to 1199px */}
       <div className="hidden md:max-[1199px]:flex flex-col">
-        <div className="w-full overflow-hidden rounded-3xl bg-card-bg">
+        <div className="w-full overflow-hidden rounded-3xl bg-card-bg px-6">
 
           {/* Text Area */}
-          <div className="flex flex-col p-6 md:px-6 md:py-9">
+          <div className="flex flex-col py-9">
             <h3 className="text-3xl font-bold leading-tight text-main-blue mb-12">
               <span className="block leading-none mb-2">{saoga.title}</span>
               <span className="block leading-none">{saoga.subtitle}</span>
@@ -90,7 +90,7 @@ export default function SaogaCard() {
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2.5 px-6 py-6">
+          <div className="flex flex-wrap gap-2.5 py-6">
             {saoga.tags.map((tag, i) => (
               <span
                 key={i}
@@ -102,7 +102,7 @@ export default function SaogaCard() {
           </div>
 
           {/* Button */}
-          <div className="px-6 pb-8">
+          <div className="pb-8">
             <Link
               href="/work/saoga"
               className="inline-flex items-center gap-1 rounded-lg bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"

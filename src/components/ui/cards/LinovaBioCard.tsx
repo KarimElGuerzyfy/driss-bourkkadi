@@ -9,7 +9,7 @@ export default function LinovaBioCard() {
       {/* DESKTOP LAYOUT — hidden below 1200px */}
       <div className="hidden min-[1200px]:block">
         <div className="relative w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-217.5">
-          <div className="flex flex-row items-center h-full px-12 gap-12">
+          <div className="flex flex-row items-center h-full px-6 min-[1200px]:px-12 gap-12">
 
             {/* Image Area — Left Column on Desktop */}
             <div className="relative shrink min-[1200px]:basis-[57%] min-[1200px]:max-w-[794.35px] min-[1200px]:aspect-[794.35/483.76]">
@@ -67,10 +67,10 @@ export default function LinovaBioCard() {
 
       {/* TABLET LAYOUT — 768px to 1199px */}
       <div className="hidden md:max-[1199px]:flex flex-col">
-        <div className="w-full overflow-hidden rounded-3xl bg-card-bg">
+        <div className="w-full overflow-hidden rounded-3xl bg-card-bg px-6">
 
           {/* Text Area */}
-          <div className="flex flex-col p-6 md:px-6 md:py-9">
+          <div className="flex flex-col py-9">
             <h3 className="text-3xl font-bold leading-tight text-main-blue mb-12">
               <span className="block leading-none mb-2">{linovabio.title}</span>
               <span className="block leading-none mb-2">{linovabio.subtitle}</span>
@@ -92,7 +92,7 @@ export default function LinovaBioCard() {
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2.5 px-6 py-6">
+          <div className="flex flex-wrap gap-2.5 py-6">
             {linovabio.tags.map((tag, i) => (
               <span
                 key={i}
@@ -104,7 +104,7 @@ export default function LinovaBioCard() {
           </div>
 
           {/* Button */}
-          <div className="px-6 pb-8">
+          <div className="pb-8">
             <Link
               href="/work/linovabio"
               className="inline-flex items-center gap-1 rounded-lg bg-btn-blue px-4 py-2 font-bold text-black text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
