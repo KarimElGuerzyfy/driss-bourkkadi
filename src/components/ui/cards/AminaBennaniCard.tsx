@@ -59,7 +59,7 @@ export default function AminaBennaniCard() {
             </div>
 
             {/* Image Area */}
-            <div className="relative flex-1 min-[1200px]:h-200 mr-12">
+            <div className="relative flex-1 min-[1200px]:h-[714px] mr-12">
               <Image
                 src={aminabennani.thumbnail}
                 alt={aminabennani.title}

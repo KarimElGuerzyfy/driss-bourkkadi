@@ -9,10 +9,10 @@ export default function LinovaBioCard() {
       {/* DESKTOP LAYOUT — hidden below 1200px */}
       <div className="hidden min-[1200px]:block">
         <div className="relative w-full overflow-hidden rounded-3xl bg-card-bg min-[1200px]:h-217.5">
-          <div className="flex flex-row items-center h-full">
+          <div className="flex flex-row items-center h-full px-12 gap-12">
 
             {/* Image Area — Left Column on Desktop */}
-            <div className="relative min-[1200px]:w-[794.35px] min-[1200px]:max-w-[794.35px] min-[1200px]:h-[483.76px] ml-12">
+            <div className="relative shrink min-[1200px]:basis-[57%] min-[1200px]:max-w-[794.35px] min-[1200px]:aspect-[794.35/483.76]">
               <Image
                 src={linovabio.thumbnail}
                 alt={linovabio.title}
@@ -23,10 +23,10 @@ export default function LinovaBioCard() {
             </div>
 
             {/* Right Column — text + tags */}
-            <div className="flex flex-col  min-[1200px]:w-[609px] shrink-0 min-[1200px]:h-[732px] min-[1200px]:pt-[100px] min-[1200px]:pb-[64px] min-[1200px]:ml-12">
+            <div className="flex flex-col grow shrink min-[1200px]:basis-[43%] min-[1200px]:max-w-[609px] min-[1200px]:h-[732px] min-[1200px]:pt-[100px] min-[1200px]:pb-[64px]">
 
               {/* Text Area */}
-              <div className="flex flex-col ml-6">
+              <div className="flex flex-col">
                 <h3 className="text-3xl font-bold leading-tight text-main-blue mb-12">
                   <span className="block leading-none mb-2">{linovabio.title}</span>
                   <span className="block leading-none mb-2">{linovabio.subtitle}</span>
@@ -37,7 +37,7 @@ export default function LinovaBioCard() {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2.5 mb-12 ml-6">
+              <div className="flex flex-wrap gap-2.5 mb-12">
                 {linovabio.tags.map((tag, i) => (
                   <span
                     key={i}
