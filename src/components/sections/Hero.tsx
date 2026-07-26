@@ -76,7 +76,7 @@ export default function Hero() {
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-btn-blue bg-transparent px-6 py-2 text-lg font-bold text-btn-blue transition-transform duration-200 ease-out hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
           >
             Download CV
-            <Image src="/icons/download-arrow.svg" alt="" width={16} height={16} />
+            <Image src="/icons/download-arrow.svg" alt="" width={14} height={14} />
           </a>
         </div>
 
@@ -85,11 +85,11 @@ export default function Hero() {
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-2xl border border-btn-blue px-4 py-2"
+              className="flex flex-col gap-3 rounded-2xl border border-btn-blue px-3 py-4"
             >
-              <p className="text-[24px] font-bold text-white whitespace-nowrap leading-none [text-box:trim-both_cap_alphabetic]">{stat.value}</p>
-              <p className="text-[16px] font-bold text-white whitespace-nowrap [text-box:trim-both_cap_alphabetic]">
-                <span className="text-main-blue">|</span> {stat.label}
+              <p className="text-[24px] text-white whitespace-nowrap font-bold leading-none [text-box:trim-both_cap_alphabetic]">{stat.value}</p>
+              <p className="text-[16px] text-white whitespace-nowrap [text-box:trim-both_cap_alphabetic]">
+                <span className="">|</span> {stat.label}
               </p>
             </div>
           ))}

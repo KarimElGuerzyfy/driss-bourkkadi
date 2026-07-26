@@ -227,7 +227,7 @@ export default function AboutSection() {
           {mobileHasOverflow && (
             <button
               onClick={() => setIsMobileExpanded(!isMobileExpanded)}
-              className="text-main-blue font-bold text-left self-start flex items-center gap-1 cursor-pointer text-[20px]"
+              className="text-main-blue font-bold text-left self-start flex items-center gap-1 cursor-pointer text-[20px] [text-box:trim-both_cap_alphabetic]"
             >
               {isMobileExpanded ? "view less" : "read more"}
             </button>
@@ -301,7 +301,7 @@ export default function AboutSection() {
             {desktopHasOverflow && (
               <button
                 onClick={() => setIsDesktopExpanded(!isDesktopExpanded)}
-                className="text-main-blue font-bold text-[24px] text-left self-start flex items-center gap-1 mb-6 cursor-pointer"
+                className="text-main-blue font-bold text-[24px] text-left self-start flex items-center gap-1 mb-6 cursor-pointer [text-box:trim-both_cap_alphabetic]"
               >
                 {isDesktopExpanded ? "view less" : "read more"}
               </button>
@@ -397,7 +397,7 @@ export default function AboutSection() {
           {mobile2HasOverflow && (
             <button
               onClick={() => setIsMobile2Expanded(!isMobile2Expanded)}
-              className="text-main-blue font-bold text-left self-start flex items-center gap-1 cursor-pointer text-[20px]"
+              className="text-main-blue font-bold text-left self-start flex items-center gap-1 cursor-pointer text-[20px] [text-box:trim-both_cap_alphabetic]"
             >
               {isMobile2Expanded ? "view less" : "read more"}
             </button>
@@ -430,7 +430,7 @@ export default function AboutSection() {
             {desktop2HasOverflow && (
               <button
                 onClick={() => setIsDesktop2Expanded(!isDesktop2Expanded)}
-                className="text-main-blue font-bold text-[24px] text-left self-start flex items-center gap-1 mb-6 cursor-pointer"
+                className="text-main-blue font-bold text-[24px] text-left self-start flex items-center gap-1 mb-6 cursor-pointer [text-box:trim-both_cap_alphabetic]"
               >
                 {isDesktop2Expanded ? "view less" : "read more"}
               </button>

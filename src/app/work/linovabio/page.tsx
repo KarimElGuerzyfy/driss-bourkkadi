@@ -277,7 +277,7 @@ export default function LinovaBioPage() {
         {hasOverflowS2 && (
           <button
             onClick={() => setIsExpandedS2(!isExpandedS2)}
-            className="mt-2 text-main-blue font-bold text-left self-start flex items-center gap-1 cursor-pointer text-[20px] min-[810px]:hidden"
+            className="mt-2 text-main-blue font-bold text-left self-start flex items-center gap-1 cursor-pointer text-[20px] min-[810px]:hidden [text-box:trim-both_cap_alphabetic]"
           >
             {isExpandedS2 ? "view less" : "read more"}
           </button>
@@ -404,7 +404,7 @@ export default function LinovaBioPage() {
         <div className="mt-6 flex justify-end">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 text-main-blue font-bold text-base uppercase tracking-wide cursor-pointer"
+            className="flex items-center gap-2 text-main-blue font-bold text-base uppercase tracking-wide cursor-pointer [text-box:trim-both_cap_alphabetic]"
           >
             <Image
               src="/icons/left-arrow.svg"

@@ -238,7 +238,7 @@ export default function AminaBennaniPage() {
                   onClick={() =>
                     setIsExpandedS2Problem(!isExpandedS2Problem)
                   }
-                  className="mt-2 text-main-blue font-bold text-left flex items-center gap-1 cursor-pointer text-[20px] min-[810px]:hidden"
+                  className="mt-2 text-main-blue font-bold text-left flex items-center gap-1 cursor-pointer text-[20px] min-[810px]:hidden [text-box:trim-both_cap_alphabetic]"
                 >
                   {isExpandedS2Problem ? "view less" : "read more"}
                 </button>
