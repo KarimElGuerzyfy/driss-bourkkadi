@@ -97,7 +97,7 @@ export default function DeukaCard() {
                 </Link>
                 {/* TODO: placeholder URL — replace with the real Deuka website link */}
                 <Link
-                  href="#"
+                  href="https://deuka.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 rounded-lg bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
@@ -158,7 +158,7 @@ export default function DeukaCard() {
             </Link>
             {/* TODO: placeholder URL — replace with the real Deuka website link */}
             <Link
-              href="#"
+              href="https://deuka.app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 rounded-lg bg-black px-4 py-2 font-bold text-white text-base transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
@@ -197,7 +197,7 @@ export default function DeukaCard() {
             </Link>
             {/* TODO: placeholder URL — replace with the real Deuka website link */}
             <Link
-              href="#"
+              href="https://deuka.app"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-black px-3 py-2 font-bold text-white text-sm transition-transform duration-200 hover:scale-[1.03] [text-box:trim-both_cap_alphabetic]"
