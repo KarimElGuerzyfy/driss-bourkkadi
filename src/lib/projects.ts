@@ -6,6 +6,7 @@ export interface ProjectData {
   description2: string;
   tags: string[];
   thumbnail: string;
+  images?: string[];
 }
 
 export const saoga: ProjectData = {
@@ -35,4 +36,20 @@ export const aminabennani: ProjectData = {
   description2: "",
   tags: ["Jan – Apr 2026 · 1 Month", "Lead UI/UX & Brand Designer", "Medical & Healthcare", "Figma · Component System · Responsive Design"],
   thumbnail: "/images/projects/dentist.svg",
+};
+
+export const deuka: ProjectData = {
+  title: "Deuka",
+  subtitle: "Modern & UX-Focused",
+  subtitle2: "",
+  description1: "Best for showing your strategy, responsive design, and real-world teamwork.",
+  description2: "",
+  tags: ["Jan – Apr 2026 · 1 Month", "Lead UI/UX & Brand Designer", "Medical & Healthcare", "Figma · Component System · Responsive Design"],
+  thumbnail: "/images/projects/deuka/01.svg",
+  images: [
+    "/images/projects/deuka/01.svg",
+    "/images/projects/deuka/02.svg",
+    "/images/projects/deuka/03.svg",
+    "/images/projects/deuka/04.svg",
+  ],
 };

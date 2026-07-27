@@ -1,6 +1,7 @@
 import SaogaCard from "@/components/ui/cards/SaogaCard";
 import LinovaBioCard from "@/components/ui/cards/LinovaBioCard";
 import AminaBennaniCard from "@/components/ui/cards/AminaBennaniCard";
+import DeukaCard from "@/components/ui/cards/DeukaCard";
 import SkillsMarquee from "@/components/ui/SkillsMarquee";
 
 export default function Work() {
@@ -13,6 +14,8 @@ export default function Work() {
         <LinovaBioCard />
         <SkillsMarquee />
         <AminaBennaniCard />
+        <SkillsMarquee />
+        <DeukaCard />
         <SkillsMarquee />
       </div>
     </section>
