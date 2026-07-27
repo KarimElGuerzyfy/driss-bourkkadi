@@ -114,7 +114,7 @@ export default function Navbar() {
       {open && (
         <div className="fixed inset-0 top-15.5 z-40 flex flex-col bg-black md:hidden">
           {/* Stacked links */}
-          <ul className="flex flex-1 flex-col items-center gap-12 pt-12 font-display text-base font-bold">
+          <ul className="flex flex-1 flex-col items-center gap-12 pt-12 font-display text-2xl font-bold">
             {links.map((link) => (
               <li key={link.href}>
                 <Link
@@ -133,7 +133,7 @@ export default function Navbar() {
           </ul>
 
           {/* Social links using SVGs */}
-          <div className="flex items-center justify-center gap-4 pb-10">
+          <div className="flex items-center justify-center gap-4 pb-25">
             {socials.map((s) => (
               <a
                 key={s.label}
@@ -143,11 +143,11 @@ export default function Navbar() {
                 aria-label={s.label}
                 className="transition-opacity hover:opacity-75"
               >
-                <Image 
-                  src={s.icon} 
-                  alt={s.label} 
-                  width={30} 
-                  height={30} 
+                <Image
+                  src={s.icon}
+                  alt={s.label}
+                  width={40}
+                  height={40}
                 />
               </a>
             ))}
