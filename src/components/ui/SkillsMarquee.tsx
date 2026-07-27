@@ -14,7 +14,10 @@ const allSkills = [...skills, ...skills, ...skills, ...skills];
 
 export default function SkillsMarquee() {
   return (
-    <div className="w-full overflow-x-hidden py-12" dir="ltr">
+    <div
+      className="w-full overflow-x-hidden py-12 min-[1101px]:[mask-image:linear-gradient(to_right,transparent_0%,black_20%,black_80%,transparent_100%)] min-[1101px]:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_20%,black_80%,transparent_100%)]"
+      dir="ltr"
+    >
       <div
         className="flex items-center gap-12"
         style={{
