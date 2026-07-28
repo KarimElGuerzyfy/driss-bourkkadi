@@ -1,3 +1,8 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+import { createTimeline, splitText, stagger } from "animejs";
+import type { FunctionValue } from "animejs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,6 +18,69 @@ const STATS: readonly StatItem[] = [
 ] as const;
 
 export default function Hero() {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+
+  useLayoutEffect(() => {
+    const heading = headingRef.current;
+    const paragraph = paragraphRef.current;
+    if (!heading || !paragraph) return;
+
+    const isDesktop = window.matchMedia("(min-width: 1101px)").matches;
+    if (!isDesktop) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    heading.classList.add("hero-heading--priming");
+    paragraph.classList.add("hero-heading--priming");
+
+    // Odd lines enter from below (100%), even lines from above (-100%).
+    // Falls back to -100% if data-line is missing so motion never stalls.
+    const lineOffset: FunctionValue<string> = (el) => {
+      const line = Number((el as HTMLElement).dataset.line ?? 0);
+      return line % 2 ? "100%" : "-100%";
+    };
+
+    // --- Title split (words + chars) ---
+    const headingSplitter = splitText(heading, {
+      words: { wrap: "clip" },
+      chars: true,
+    });
+    const { words: headingWords, chars: headingChars } = headingSplitter;
+
+    // --- Paragraph split (words only -- smoother than per-char for a sentence) ---
+    const paragraphSplitter = splitText(paragraph, {
+      words: { wrap: "clip" },
+    });
+    const { words: paragraphWords } = paragraphSplitter;
+
+    const timeline = createTimeline({
+      defaults: { ease: "inOut(3)", duration: 650 },
+    })
+      // Title: words then chars, entrance only, settle at 0%.
+      .add(headingWords, { y: [lineOffset, "0%"] }, stagger(125))
+      .add(headingChars, { y: [lineOffset, "0%"] }, stagger(10, { from: "random" }))
+      // Paragraph: word-based, starts at timeline 0 (same instant as the title
+      // on reload). Gentle per-word stagger for a smooth, non-clunky reveal.
+      .add(
+        paragraphWords,
+        { y: ["100%", "0%"], duration: 700, ease: "out(3)", delay: stagger(35) },
+      )
+      .init();
+
+    heading.classList.remove("hero-heading--priming");
+    paragraph.classList.remove("hero-heading--priming");
+
+    return () => {
+      timeline.revert();
+      headingSplitter.revert();
+      paragraphSplitter.revert();
+    };
+  }, []);
+
   return (
     // CONTROLS: Dynamic viewport computation prevents layout overflows caused by the navbar frame height
     <section className="bg-black px-6 pt-12 pb-21.5 min-[1101px]:px-21.5 min-h-[calc(100vh-62px)] min-[810px]:max-[1100px]:min-h-175 min-[810px]:max-[1100px]:h-175 grid grid-cols-1 min-[810px]:grid-cols-2 items-start min-[1101px]:items-end min-[1101px]:pb-20 max-w-404.5 mx-auto">
@@ -22,11 +90,17 @@ export default function Hero() {
 
         {/* 1. Title + Paragraph */}
         <div>
-          <h1 className="font-extrabold leading-[0.8] text-[24px] md:text-[clamp(2.75rem,4.5vw,4rem)] max-[1100px]:text-[32px] max-[419px]:text-[24px]">
-            <span className="block text-white">Driss Bourakkadi</span>
-            <span className="block text-main-blue">Visual Design Specialist</span>
+          <h1
+            ref={headingRef}
+            className="hero-heading font-extrabold leading-[0.8] min-[1101px]:leading-[1.1] text-[24px] md:text-[clamp(2.75rem,4.5vw,4rem)] max-[1100px]:text-[32px] max-[419px]:text-[24px]"
+          >
+            <span className="block text-white" data-line="0">Driss Bourakkadi</span>
+            <span className="block text-main-blue" data-line="1">Visual Design Specialist</span>
           </h1>
-          <p className="max-w-2xl font-semibold text-[24px] max-[419px]:text-[20px] text-white leading-none mt-12 lg:mt-14 min-[1101px]:text-[clamp(1.5rem,2.2vw,2rem)]">
+          <p
+            ref={paragraphRef}
+            className="hero-paragraph max-w-2xl font-semibold text-[24px] max-[419px]:text-[20px] text-white leading-none mt-12 lg:mt-14 min-[1101px]:leading-[1.1] min-[1101px]:text-[clamp(1.5rem,2.2vw,2rem)]"
+          >
             Specializing in bridging the gap between high-quality Product
             Photography and digital excellence.
           </p>

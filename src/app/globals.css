@@ -16,6 +16,34 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hero split-text entrance (desktop only, >=1101px) -- applied/removed via JS only */
+.hero-heading--priming {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-heading--priming {
+    opacity: 1;
+  }
+}
+
+/*
+  Split-text descender fix.
+  { wrap: 'clip' } wraps each word/line in an overflow:hidden inline-block span
+  so text can slide out from behind a mask. Tight leading makes the clip box
+  shorter than the glyphs, so descenders (g, p, y) get clipped at the bottom.
+  Give those clip wrappers vertical room so descenders stay visible, without
+  changing the visible leading. Targets the generated clip spans by their
+  inline overflow style so it never touches anything else.
+*/
+.hero-heading span[style*="overflow: hidden"],
+.hero-heading span[style*="overflow:hidden"],
+.hero-paragraph span[style*="overflow: hidden"],
+.hero-paragraph span[style*="overflow:hidden"] {
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+
 body {
   background-color: #000000;
   color: #ffffff;
