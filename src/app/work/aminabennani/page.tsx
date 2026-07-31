@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const pillLabels = [
-  "THE CHALLENGE & THE PROBLEM",
+  "THE CHALLENGE",
   "DESIGN & TECH STRATEGY",
-  "THE DESIGN SYSTEM & ARCHITECTURE",
-  "EXECUTION & THE FINAL PRODUCT",
+  "DESIGN SYSTEM",
+  "FINAL PRODUCT & EXECUTION",
 ];
 
 export default function AminaBennaniPage() {
@@ -57,7 +57,7 @@ export default function AminaBennaniPage() {
     <button
       key={label}
       onClick={() => scrollToSection(index)}
-      className={`w-full flex items-center text-left font-bold text-[27px] leading-tight rounded-2xl px-3 py-2 transition-colors [text-box:trim-both_cap_alphabetic] ${
+      className={`w-full flex items-center text-center font-bold text-[27px] leading-tight rounded-2xl pl-6 py-2 transition-colors [text-box:trim-both_cap_alphabetic] ${
         activeSectionIndex === index
           ? "bg-black text-main-blue"
           : "bg-[#282828] text-[#F1FAFC]/30"
@@ -80,7 +80,7 @@ export default function AminaBennaniPage() {
         {/* Desktop layout: sidebar + content */}
         <div className="min-[1101px]:flex min-[1101px]:gap-6 min-[1101px]:items-start">
           {/* Desktop-only vertical sidebar */}
-          <nav className="hidden min-[1101px]:flex min-[1101px]:flex-col min-[1101px]:gap-3 min-[1101px]:w-1/4 min-[1101px]:max-w-[380px] min-[1101px]:shrink-0 min-[1101px]:sticky min-[1101px]:top-26">
+          <nav className="hidden min-[1101px]:flex min-[1101px]:flex-col min-[1101px]:gap-3 min-[1101px]:w-[380px] min-[1101px]:max-w-[380px] min-[1101px]:shrink-0 min-[1101px]:sticky min-[1101px]:top-26">
             {pillLabels.map((label, index) => renderPill(label, index))}
           </nav>
 

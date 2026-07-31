@@ -78,9 +78,9 @@ export default function AboutSection() {
   const [allowed2TextHeight, setAllowed2TextHeight] = useState(0);
 
   const mobile2TextRef = useRef<HTMLParagraphElement>(null);
-  const top2TextRef = useRef<HTMLParagraphElement>(null);
   const desktop2TextRef = useRef<HTMLParagraphElement>(null);
   const image2ColRef = useRef<HTMLDivElement>(null);
+  const heading2Ref = useRef<HTMLHeadingElement>(null);
 
   const handleLayout2AndOverflow = () => {
     if (mobile2TextRef.current) {
@@ -90,12 +90,11 @@ export default function AboutSection() {
       }
     }
 
-    if (image2ColRef.current && top2TextRef.current) {
+    if (image2ColRef.current) {
       const totalImgHeight = image2ColRef.current.offsetHeight;
-      const topPartHeight = top2TextRef.current.offsetHeight;
-      
-      const introductionOccupiedSpace = topPartHeight + 24;
-      
+      const headingHeight = heading2Ref.current ? heading2Ref.current.offsetHeight : 0;
+      // heading has mb-6 (24px)
+      const introductionOccupiedSpace = headingHeight + 24;
       const exactRemainingHeight = totalImgHeight - introductionOccupiedSpace;
       setAllowed2TextHeight(exactRemainingHeight);
 
@@ -165,20 +164,13 @@ export default function AboutSection() {
 
   return (
     <>
-      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none p-6 pt-12 pb-12 min-[810px]:pt-12 min-[810px]:pb-12 min-[810px]:px-10.75 min-[1101px]:pt-12 min-[1101px]:pb-12 min-[1101px]:px-21.5">
         {/* =========================================================================
             PHONE LAYOUT (< 810px)
             ========================================================================= */}
         <div className="flex flex-col gap-6 min-[810px]:hidden ">
-          <h2 className="text-[32px] font-bold text-main-blue">About</h2>
-
           <p className="text-[24px] text-justify font-bold">
-            Hi, I&apos;m Driss , I am a{" "}
-            <span className="text-main-blue">
-              dynamic and innovative Visual Designer
-            </span>
-            , with over <span className="text-main-blue">6 years</span> of
-            experience transforming ideas into visually stunning realities.
+            Hi, I&apos;m <span className="text-main-blue">Driss</span>—<span className="text-main-blue">a Visual Design Specialist</span> driven by the craft of turning complex ideas into powerful visual stories.
           </p>
 
           <div className="w-full">
@@ -199,24 +191,36 @@ export default function AboutSection() {
                 !isMobileExpanded ? "line-clamp-3" : ""
               }`}
             >
-              My journey into design began with a background in computer informatics
-              and hardware repair a technical foundation that shaped my
-              problem-solving mindset and attention to detail. Since pivoting to
-              creative work in 2021, I have established{" "}
+              My background in computer informatics gave me a sharp engineering
+              mindset, but design is where I truly belong. Over the past 6+
+              years, through{" "}
               <span className="text-main-blue">
                 Driss Bourakkadi Creative Studio
               </span>
-              , where I lead a dedicated team in crafting compelling visual
-              identities and marketing materials. I specialize in helping businesses
-              build their presence from the ground up, delivering high-impact
-              solutions across diverse industries including cosmetics, advertising,
-              education, and construction. Combining a Diploma in Informatics
-              (2021) with advanced creative skills in the Adobe Creative Suite, I
-              bridge the gap between technical precision and artistic expression. I
-              am also Goethe-Zertifikat B1 certified, enabling effective
-              communication in multicultural environments. For me, design is not
-              just a profession it is the element where I feel most focused,
-              inspired, and driven to create value for my clients
+              , I&apos;ve been helping brands—from cosmetics to education—build
+              their visual identity from the ground up. I bridge technical
+              precision with creative art direction, crafting high-impact
+              imagery and digital experiences that don&apos;t just look good,
+              but deliver real value.
+              <br />
+              <br />
+              For me, design isn&apos;t just a profession—it&apos;s an
+              obsession that consumes 90% of my day. Whether I&apos;m at my
+              studio or diving into a new tutorial at home, I&apos;m
+              constantly pushing to stay ahead of the curve.
+              <br />
+              <br />
+              My journey evolved from a technical background into founding
+              Driss Bourakkadi Creative Studio in 2021, where I don&apos;t
+              just push pixels—I build brands from the ground up. From
+              product photography and packaging to full visual identities and
+              digital strategies, I partner with businesses like{" "}
+              <span className="text-main-blue">Linova Bio</span> and{" "}
+              <span className="text-main-blue">Saoga</span> to help them
+              stand out and scale. I&apos;m a relentless learner; if a
+              project demands a new tool or skill, I master it. At my core,
+              I&apos;m not just a designer executing software—I&apos;m a
+              creative partner invested in the big picture.
             </p>
             
             {!isMobileExpanded && mobileHasOverflow && (
@@ -253,17 +257,11 @@ export default function AboutSection() {
         {/* =========================================================================
             TABLET & DESKTOP LAYOUT (>= 810px)
             ========================================================================= */}
-        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-4 font-bold text-main-blue">About</h2>
         <div className="font-bold hidden min-[810px]:grid grid-cols-[1fr_auto] gap-8 min-[1101px]:gap-12 items-start">
           <div className="flex flex-col">
             {/* Top description reference added here to measure offset correctly */}
             <p ref={topTextRef} className="text-[24px] min-[1101px]:text-[30px] text-justify mb-6 leading-tight">
-              Hi, I&apos;m Driss , I am a{" "}
-              <span className="text-main-blue">
-                dynamic and innovative Visual Designer
-              </span>
-              , with over <span className="text-main-blue">6 years</span> of
-              experience transforming ideas into visually stunning realities.
+              Hi, I&apos;m <span className="text-main-blue">Driss</span>—<span className="text-main-blue">a Visual Design Specialist</span> driven by the craft of turning complex ideas into powerful visual stories.
             </p>
 
             <div className="relative mb-6">
@@ -272,24 +270,37 @@ export default function AboutSection() {
                 style={{ maxHeight: computedDesktopHeight }}
               >
                 <p ref={desktopTextRef} className="text-[20px] min-[1101px]:text-[24px] text-justify leading-tight">
-                  My journey into design began with a background in computer
-                  informatics and hardware repair a technical foundation that shaped
-                  my problem-solving mindset and attention to detail. Since pivoting
-                  to creative work in 2021, I have established{" "}
+                  My background in computer informatics gave me a sharp
+                  engineering mindset, but design is where I truly belong.
+                  Over the past 6+ years, through{" "}
                   <span className="text-main-blue">
                     Driss Bourakkadi Creative Studio
                   </span>
-                  , where I lead a dedicated team in crafting compelling visual
-                  identities and marketing materials. I specialize in helping
-                  businesses build their presence from the ground up, delivering
-                  high-impact solutions across diverse industries including cosmetics,
-                  advertising, education, and construction. Combining a Diploma in
-                  Informatics (2021) with advanced creative skills in the Adobe
-                  Creative Suite, I bridge the gap between technical precision and
-                  artistic expression. I am also Goethe-Zertifikat B1 certified,
-                  enabling effective communication in multicultural environments. For
-                  me, design is not just a profession it is the element where I feel
-                  most focused, inspired, and driven to create value for my clients
+                  , I&apos;ve been helping brands—from cosmetics to
+                  education—build their visual identity from the ground up. I
+                  bridge technical precision with creative art direction,
+                  crafting high-impact imagery and digital experiences that
+                  don&apos;t just look good, but deliver real value.
+                  <br />
+                  <br />
+                  For me, design isn&apos;t just a profession—it&apos;s an
+                  obsession that consumes 90% of my day. Whether I&apos;m at
+                  my studio or diving into a new tutorial at home, I&apos;m
+                  constantly pushing to stay ahead of the curve.
+                  <br />
+                  <br />
+                  My journey evolved from a technical background into
+                  founding Driss Bourakkadi Creative Studio in 2021, where I
+                  don&apos;t just push pixels—I build brands from the ground
+                  up. From product photography and packaging to full visual
+                  identities and digital strategies, I partner with
+                  businesses like{" "}
+                  <span className="text-main-blue">Linova Bio</span> and{" "}
+                  <span className="text-main-blue">Saoga</span> to help them
+                  stand out and scale. I&apos;m a relentless learner; if a
+                  project demands a new tool or skill, I master it. At my
+                  core, I&apos;m not just a designer executing software—I&apos;m
+                  a creative partner invested in the big picture.
                 </p>
               </div>
 
@@ -352,26 +363,22 @@ export default function AboutSection() {
       {/* =========================================================================
           HORIZONTAL DIVIDER
           ========================================================================= */}
-      <div className="w-full max-w-404.5 mx-auto px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
+      <div className="w-full max-w-404.5 mx-auto min-[1101px]:px-21.5">
         <hr className="border-t border-[#ABE3EE]" />
       </div>
 
       {/* =========================================================================
           SECTION 2: BRIDGING DESIGN AND CODE
           ========================================================================= */}
-      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none p-6 pt-12 pb-12 min-[810px]:pt-12 min-[810px]:pb-12 min-[810px]:px-10.75 min-[1101px]:pt-12 min-[1101px]:pb-12 min-[1101px]:px-21.5">
         {/* Phone Layout (< 810px) */}
         <div className="flex flex-col gap-6 min-[810px]:hidden ">
           <h2 className="text-[32px] font-bold text-main-blue">Bridging Design and Code</h2>
 
-          <p className="text-[24px] text-justify font-bold">
-            &ldquo;Great design is only as good as the code behind it.&rdquo;
-          </p>
-
           <div className="w-full">
             <Image
-              src="/images/profile/drisskarim.svg"
-              alt="Driss and Karim"
+              src="/images/profile/section 2 img 2.svg"
+              alt="Bridging design and code"
               width={320}
               height={320}
               priority
@@ -386,7 +393,20 @@ export default function AboutSection() {
                 !isMobile2Expanded ? "line-clamp-3" : ""
               }`}
             >
-              As a UI/UX Designer, I focus on crafting intuitive layouts, seamless user journeys, and pixel-perfect interfaces. But a great design truly comes to life when it meets a brilliant mind on the development side—and that is exactly what happens when I team up with my friend and developer, Karim. When we collaborate on projects, we bridge the gap between creative vision and technical execution. While I map out the visual strategy and interactive experiences, Karim brings those concepts to life with clean, efficient, and scalable code. Our workflow is built on continuous feedback, mutual problem-solving, and a shared goal of delivering seamless digital products. As captured in team.png, our partnership is all about turning ideas into high-performance web and mobile solutions where form and function meet perfectly.
+              Great products are built through collaboration, not ego. In
+              late 2025, software developer Karim joined the studio,
+              turning our workflow into a full-stack operation—taking
+              projects in Figma all the way to production-ready code.
+              <br />
+              <br />
+              More than just building websites from scratch, this synergy
+              gave me a transferable blueprint for working with engineering
+              teams. I learned to speak developer, understand code
+              constraints, and take technical feedback constructively
+              without personal bias. Today, whether collaborating with
+              in-house tech partners or external engineering teams, I
+              deliver design systems built with technical empathy—ensuring
+              seamless handoffs and friction-free execution.
             </p>
             
             {!isMobile2Expanded && mobile2HasOverflow && (
@@ -405,12 +425,9 @@ export default function AboutSection() {
         </div>
 
         {/* Tablet & Desktop Layout (>= 810px) */}
-        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-4 font-bold text-main-blue">Bridging Design and Code</h2>
         <div className="font-bold hidden min-[810px]:grid grid-cols-[1fr_auto] gap-8 min-[1101px]:gap-12 items-start">
           <div className="flex flex-col">
-            <p ref={top2TextRef} className="text-[24px] min-[1101px]:text-[30px] text-justify mb-6 leading-tight">
-              &ldquo;Great design is only as good as the code behind it.&rdquo;
-            </p>
+            <h2 ref={heading2Ref} className="text-[28px] min-[1101px]:text-[40px] mb-6 font-bold text-main-blue">Bridging Design and Code</h2>
 
             <div className="relative mb-6">
               <div
@@ -418,7 +435,21 @@ export default function AboutSection() {
                 style={{ maxHeight: computedDesktop2Height }}
               >
                 <p ref={desktop2TextRef} className="text-[20px] min-[1101px]:text-[24px] text-justify leading-tight">
-                  As a UI/UX Designer, I focus on crafting intuitive layouts, seamless user journeys, and pixel-perfect interfaces. But a great design truly comes to life when it meets a brilliant mind on the development side—and that is exactly what happens when I team up with my friend and developer, Karim. When we collaborate on projects, we bridge the gap between creative vision and technical execution. While I map out the visual strategy and interactive experiences, Karim brings those concepts to life with clean, efficient, and scalable code. Our workflow is built on continuous feedback, mutual problem-solving, and a shared goal of delivering seamless digital products. As captured in team.png, our partnership is all about turning ideas into high-performance web and mobile solutions where form and function meet perfectly.
+                  Great products are built through collaboration, not ego.
+                  In late 2025, software developer Karim joined the studio,
+                  turning our workflow into a full-stack operation—taking
+                  projects in Figma all the way to production-ready code.
+                  <br />
+                  <br />
+                  More than just building websites from scratch, this
+                  synergy gave me a transferable blueprint for working with
+                  engineering teams. I learned to speak developer,
+                  understand code constraints, and take technical feedback
+                  constructively without personal bias. Today, whether
+                  collaborating with in-house tech partners or external
+                  engineering teams, I deliver design systems built with
+                  technical empathy—ensuring seamless handoffs and
+                  friction-free execution.
                 </p>
               </div>
 
@@ -440,8 +471,8 @@ export default function AboutSection() {
           <div ref={image2ColRef} className="shrink-0">
             <div className="block min-[1101px]:hidden">
               <Image
-                src="/images/profile/drisskarim.svg"
-                alt="Driss and Karim"
+                src="/images/profile/section 2 img 2.svg"
+                alt="Bridging design and code"
                 width={250}
                 height={250}
                 priority
@@ -450,8 +481,8 @@ export default function AboutSection() {
             </div>
             <div className="hidden min-[1101px]:block">
               <Image
-                src="/images/profile/drisskarim.svg"
-                alt="Driss and Karim"
+                src="/images/profile/section 2 img 1.svg"
+                alt="Bridging design and code"
                 width={500}
                 height={500}
                 priority
@@ -465,14 +496,14 @@ export default function AboutSection() {
       {/* =========================================================================
           HORIZONTAL DIVIDER
           ========================================================================= */}
-      <div className="w-full max-w-404.5 mx-auto px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
+      <div className="w-full max-w-404.5 mx-auto min-[1101px]:px-21.5">
         <hr className="border-t border-[#ABE3EE]" />
       </div>
 
       {/* =========================================================================
           SECTION 3: EXPERIENCE
           ========================================================================= */}
-      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none p-6 pt-12 pb-12 min-[810px]:pt-12 min-[810px]:pb-12 min-[810px]:px-10.75 min-[1101px]:pt-12 min-[1101px]:pb-12 min-[1101px]:px-21.5">
         {/* Phone Layout Heading (< 810px) */}
         <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6">Experience</h2>
         
@@ -482,7 +513,7 @@ export default function AboutSection() {
         <div className="flex flex-col font-bold gap-16">
           {/* Entry 1 */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-[#C7EDF3]">
               Designer & Owner
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
@@ -496,7 +527,7 @@ export default function AboutSection() {
 
           {/* Entry 2 */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-[#C7EDF3]">
               Web & UI/UX Designer
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
@@ -510,7 +541,7 @@ export default function AboutSection() {
 
           {/* Entry 3 */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-[#C7EDF3]">
               Brand Identity Lead
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
@@ -524,7 +555,7 @@ export default function AboutSection() {
 
           {/* Entry 4 */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-white">
+            <h3 className="text-[24px] min-[1101px]:text-[30px] text-justify leading-tight text-[#C7EDF3]">
               Creative Partner
             </h3>
             <div className="flex flex-col min-[810px]:flex-row min-[810px]:justify-between min-[810px]:items-baseline gap-1 text-[18px] min-[810px]:text-[20px] min-[1101px]:text-[24px] text-white">
@@ -536,24 +567,30 @@ export default function AboutSection() {
             </p>
           </div>
         </div>
-        <hr className="border-t border-dashed border-white/30 mt-8" />
       </section>
+
+      {/* =========================================================================
+          HORIZONTAL DIVIDER
+          ========================================================================= */}
+      <div className="w-full max-w-404.5 mx-auto min-[1101px]:px-21.5">
+        <hr className="border-t border-[#ABE3EE]" />
+      </div>
 
       {/* =========================================================================
           SECTION 4: TOOL STACK
           ========================================================================= */}
-      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-9.125 min-[810px]:pt-18.25 min-[810px]:pb-18.25 min-[1101px]:pt-36.5 min-[1101px]:pb-36.5">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-12 pb-12 min-[810px]:pt-12 min-[810px]:pb-12 min-[1101px]:pt-12 min-[1101px]:pb-12">
         {/* Phone Layout Heading (< 810px) */}
-        <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6 px-5.375">
+        <h2 className="text-[32px] font-bold text-main-blue min-[810px]:hidden mb-6 px-6">
           Tool stack
         </h2>
         
         {/* Tablet & Desktop Layout Heading (>= 810px) */}
-        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-8 font-bold text-main-blue px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
+        <h2 className="hidden min-[810px]:block text-[28px] min-[1101px]:text-[40px] mb-8 font-bold text-main-blue px-6 min-[810px]:px-10.75 min-[1101px]:px-21.5">
           Tool stack
         </h2>
 
-        <p className="text-[24px] min-[1101px]:text-[30px] text-justify font-bold mb-8 leading-tight px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5">
+        <p className="text-[24px] min-[1101px]:text-[30px] text-justify font-bold mb-8 leading-tight px-6 min-[810px]:px-10.75 min-[1101px]:px-21.5">
           My work is built on a refined combination of Adobe Creative Suite expertise and advanced UI/UX tools, allowing me to craft visually compelling, highly functional interfaces. I blend systems thinking and creativity to produce designs that communicate clarity and strong visual identity. Here is a bit of my current rotation.
         </p>
 
@@ -580,16 +617,16 @@ export default function AboutSection() {
       </section>
 
       {/* =========================================================================
-          FULL-WIDTH WRAPPER FOR THE BOTTOM DASHED DIVIDER
+          HORIZONTAL DIVIDER
           ========================================================================= */}
-      <div className="w-full max-w-404.5 mx-auto px-5.375 min-[810px]:px-10.75 min-[1101px]:px-21.5 pb-9.125 min-[810px]:pb-18.25 min-[1101px]:pb-36.5">
-        <hr className="border-t border-dashed border-white/30" />
+      <div className="w-full max-w-404.5 mx-auto min-[1101px]:px-21.5">
+        <hr className="border-t border-[#ABE3EE]" />
       </div>
 
       {/* =========================================================================
           SECTION 5: OFF-SCREEN & INSPIRATION
           ========================================================================= */}
-      <section className="w-full max-w-404.5 mx-auto text-white leading-none pt-9.125 pb-5.375 px-5.375 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[810px]:px-10.75 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 min-[1101px]:px-21.5">
+      <section className="w-full max-w-404.5 mx-auto text-white leading-none p-6 pt-12 pb-12 min-[810px]:pt-12 min-[810px]:pb-12 min-[810px]:px-10.75 min-[1101px]:pt-12 min-[1101px]:pb-12 min-[1101px]:px-21.5">
         {/* Responsive Heading Setup matching structure of earlier sections */}
         <h2 className="text-[32px] min-[810px]:text-[28px] min-[1101px]:text-[40px] font-bold text-main-blue mb-6 min-[810px]:mb-8">
           Off-Screen & Inspiration
