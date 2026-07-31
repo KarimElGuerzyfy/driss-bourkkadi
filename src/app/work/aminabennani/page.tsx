@@ -1,22 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-
-const useIsomorphicLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+import { useEffect, useRef, useState } from "react";
 
 const pillLabels = [
-  "UI/UX Design System",
-  "The Problem",
-  "Responsive Design Execution",
-  "The Design Solution",
-];
-
-const s4Images = [
-  "/images/projects/website/s4-01.svg",
-  "/images/projects/website/s4-02.svg",
-  "/images/projects/website/s4-03.svg",
+  "THE CHALLENGE & THE PROBLEM",
+  "DESIGN & TECH STRATEGY",
+  "THE DESIGN SYSTEM & ARCHITECTURE",
+  "EXECUTION & THE FINAL PRODUCT",
 ];
 
 export default function AminaBennaniPage() {
@@ -62,43 +53,6 @@ export default function AminaBennaniPage() {
     });
   };
 
-  const [isExpandedS2Problem, setIsExpandedS2Problem] = useState(false);
-  const [hasOverflowS2Problem, setHasOverflowS2Problem] = useState(false);
-  const textRefS2Problem = useRef<HTMLDivElement>(null);
-
-  useIsomorphicLayoutEffect(() => {
-    const el = textRefS2Problem.current;
-    if (!el) return;
-
-    const checkOverflow = () => {
-      if (!isExpandedS2Problem) {
-        setHasOverflowS2Problem(el.scrollHeight > el.clientHeight);
-      }
-    };
-
-    checkOverflow();
-    window.addEventListener("resize", checkOverflow);
-    return () => window.removeEventListener("resize", checkOverflow);
-  }, [isExpandedS2Problem]);
-
-  const carouselRefS4 = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = carouselRefS4.current;
-    if (!el) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-      el.scrollLeft += e.deltaY;
-    };
-
-    el.addEventListener("wheel", handleWheel, { passive: false });
-    return () => {
-      el.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
-
   const renderPill = (label: string, index: number, extraClassName = "") => (
     <button
       key={label}
@@ -132,327 +86,273 @@ export default function AminaBennaniPage() {
 
           {/* Content column */}
           <div className="min-[1101px]:w-3/4">
-            {/* Section 1 — UI/UX Design System */}
+            {/* Section 1 — The Challenge & The Problem */}
             <div
               ref={(el) => {
                 sectionRefs.current[0] = el;
               }}
               className="scroll-mt-16 min-[810px]:scroll-mt-96 min-[1101px]:scroll-mt-20"
             >
-              <h1 className="text-main-blue font-bold leading-tight text-[32px] min-[810px]:text-[36px] min-[1101px]:text-[40px]">
-                Dr. Amina Bennani – Specialist Dentist
-              </h1>
-
-              <h2 className="mt-4 text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[1101px]:text-[32px] min-[810px]:hidden min-[1101px]:block">
-                UI/UX Design System
+              <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[810px]:hidden min-[1101px]:block">
+                THE CHALLENGE & THE PROBLEM
               </h2>
 
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                The Need
+              </h3>
               <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
-                The Dr. Amina Bennani digital platform is a premium,
-                user-centric website designed to bridge the gap between
-                compassionate dental care and modern patient convenience. The
-                goal was to build a clean, authoritative, and highly
-                responsive landing page that communicates professional
-                excellence, showcases specialized services, and optimizes
-                the patient appointment booking funnel.
+                Dr. Amina Bennani, a specialist dentist, needed to establish a
+                digital presence that accurately reflected the quality of her
+                clinic. Her previous setup lacked a dedicated online
+                destination, leading potential patients to rely on
+                word-of-mouth or generic directories. She required a modern
+                platform to showcase her specialized services (Orthodontics,
+                Implantology, Cosmetic Dentistry), display patient
+                testimonials, simplify appointment bookings, and provide
+                essential clinical information clearly.
               </p>
 
-              <div className="mt-4 rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/projects/website/s1-01.svg"
-                  alt="Dr. Amina Bennani website design preview"
-                  width={738}
-                  height={487}
-                  className="w-full h-auto"
-                />
-              </div>
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                The Target Market
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                The primary audience consists of local patients seeking
+                high-end, reliable dental care—ranging from parents looking
+                for pediatric care to working professionals interested in
+                cosmetic enhancements. Moroccan patients often seek clarity,
+                cleanliness, and reassurance when selecting healthcare
+                providers.
+              </p>
+
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                Strategic Design Decisions
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                During initial discovery workshops between Dr. Bennani and
+                myself, we outlined clear design directions:
+              </p>
+              <ul className="mt-2 list-disc pl-12 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                <li>
+                  Visual Tone: Reassuring, premium, hygienic, and approachable.
+                  Dental visits often carry anxiety; the aesthetic needed to
+                  feel calm and welcoming rather than sterile and clinical.
+                </li>
+                <li className="mt-2">
+                  Color Palette: A soothing base of soft clinical blues and deep
+                  navies paired with crisp whites and warm neutral accents to
+                  convey trust, precision, and care.
+                </li>
+                <li className="mt-2">
+                  Imagery & Photography: Moving away from generic stock photos
+                  of overly artificial smiles. Instead, we prioritized
+                  high-quality shots of the actual clinic, modern equipment, and
+                  real doctor-patient interactions to build authentic trust.
+                </li>
+                <li className="mt-2">
+                  Typography: Clean, highly legible sans-serif typography for
+                  clear hierarchy, high readability across devices, and an
+                  accessible feel for all age demographics.
+                </li>
+              </ul>
             </div>
 
             <div className="border-t border-[#ABE3EE]/30 mt-16 mb-16" />
 
-            {/* Section 2 — The Problem */}
+            {/* Section 2 — Design & Tech Strategy */}
             <div
               ref={(el) => {
                 sectionRefs.current[1] = el;
               }}
               className="scroll-mt-16 min-[810px]:scroll-mt-96 min-[1101px]:scroll-mt-20"
             >
-              {/* Title — hidden on tablet, visible on phone and desktop */}
-              <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[1101px]:text-[32px] min-[810px]:hidden min-[1101px]:block">
-                The Problem
+              <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[810px]:hidden min-[1101px]:block">
+                DESIGN & TECH STRATEGY
               </h2>
 
-              {/* Phone: image comes right after title, before text */}
-              <div className="mt-4 rounded-2xl overflow-hidden min-[810px]:hidden">
-                <Image
-                  src="/images/projects/website/s2-01.svg"
-                  alt="Nos Services section design preview"
-                  width={1005}
-                  height={612}
-                  className="w-full h-auto"
-                />
-              </div>
-
-              {/* Phone: combined clamped text block */}
-              <div className="relative mt-4 min-[810px]:hidden">
-                <div
-                  ref={textRefS2Problem}
-                  className={`text-justify leading-tight text-lg transition-all duration-300 ease-in-out ${
-                    !isExpandedS2Problem ? "line-clamp-3" : ""
-                  }`}
-                >
-                  <p>
-                    Modern dental patients seek trust, clarity, and instant
-                    accessibility. Traditional medical websites often suffer
-                    from confusing navigation, cold aesthetic choices, and
-                    friction-heavy contact methods.
-                  </p>
-                  <p className="font-bold mt-2">Identified Pain Points</p>
-                  <ul className="list-disc pl-5 mt-1 space-y-1">
-                    <li>
-                      High Friction in Booking: Patients find it tedious to
-                      jump through multiple pages just to make an inquiry or
-                      find contact information.
-                    </li>
-                    <li>
-                      Lack of Immediate Trust: Patients hesitate to choose a
-                      specialist without visible social proof, clear
-                      credentials, or transparent location details.
-                    </li>
-                    <li>
-                      Poor Mobile Disconnect: Healthcare sites frequently
-                      fail to translate complex grid elements (like
-                      multi-service cards or map embeds) into intuitive
-                      single-column smartphone layouts.
-                    </li>
-                  </ul>
-                </div>
-
-                {!isExpandedS2Problem && hasOverflowS2Problem && (
-                  <div className="absolute bottom-0 left-0 right-0 h-10 bg-linear-to-t from-card-bg to-transparent pointer-events-none" />
-                )}
-              </div>
-
-              {hasOverflowS2Problem && (
-                <button
-                  onClick={() =>
-                    setIsExpandedS2Problem(!isExpandedS2Problem)
-                  }
-                  className="mt-2 text-main-blue font-bold text-left flex items-center gap-1 cursor-pointer text-[20px] min-[810px]:hidden [text-box:trim-both_cap_alphabetic]"
-                >
-                  {isExpandedS2Problem ? "view less" : "read more"}
-                </button>
-              )}
-
-              {/* Tablet/Desktop: paragraph, image, pain points — full order, no clamping */}
-              <p className="hidden min-[810px]:block mt-2 text-justify leading-tight text-2xl font-bold">
-                Modern dental patients seek trust, clarity, and instant
-                accessibility. Traditional medical websites often suffer
-                from confusing navigation, cold aesthetic choices, and
-                friction-heavy contact methods.
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                As a full-service creative and development workflow, our
+                approach was built on bridging high-fidelity visual design with
+                clean, performance-first engineering.
               </p>
 
-              <div className="hidden min-[810px]:block mt-4 rounded-2xl overflow-hidden">
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                The Design Phase (Figma & UX Architecture)
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                Before jumping into visuals, we mapped out the patient journey:
+              </p>
+              <ol className="mt-2 list-decimal pl-12 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                <li>
+                  Discovery & Frictionless Navigation: Patients must instantly
+                  understand services offered, location, and working hours
+                  within seconds of landing.
+                </li>
+                <li className="mt-2">
+                  Bilingual UX: Recognizing the local demographic in Morocco,
+                  the experience was planned as a seamless multi-language
+                  interface in French and Arabic, ensuring intuitive
+                  right-to-left (RTL) and left-to-right (LTR) layout switching
+                  without breaking visual harmony.
+                </li>
+                <li className="mt-2">
+                  Conversion-Driven CTAs: Prominent &ldquo;Book an
+                  Appointment&rdquo; and &ldquo;Call Clinic&rdquo; actions
+                  placed strategically across all scroll depth levels.
+                </li>
+              </ol>
+
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                The Engineering & Dev Aspect
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                To match the speed, cleanliness, and security expected of a
+                modern medical platform, we opted for a robust tech stack:
+              </p>
+              <ul className="mt-2 list-disc pl-12 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                <li>
+                  Next.js & TypeScript: Built for lightning-fast server-side
+                  rendering, top-tier SEO for local search optimization, and
+                  type-safe code architecture.
+                </li>
+                <li className="mt-2">
+                  Tailwind CSS: Allowed us to translate Figma design tokens
+                  (spacing, typography scales, color palettes) directly into
+                  utility classes for pixel-perfect fidelity.
+                </li>
+                <li className="mt-2">
+                  Interactive Integrations: Embedded Google Maps API for
+                  real-time location directions and frictionless WhatsApp/phone
+                  call triggers.
+                </li>
+              </ul>
+
+              {/* Section image — full-width, 48px below the last paragraph */}
+              <div className="hidden min-[1101px]:block mt-12 overflow-hidden">
                 <Image
-                  src="/images/projects/website/s2-01.svg"
-                  alt="Nos Services section design preview"
+                  src="/images/projects/website/section 2 img 1.svg"
+                  alt="Design and tech strategy overview"
                   width={1005}
                   height={612}
                   className="w-full h-auto"
                 />
               </div>
-
-              <div className="hidden min-[810px]:block mt-4 text-justify leading-tight text-2xl font-bold">
-                <p className="font-bold">Identified Pain Points</p>
-                <ul className="list-disc pl-5 mt-1 space-y-1">
-                  <li>
-                    High Friction in Booking: Patients find it tedious to
-                    jump through multiple pages just to make an inquiry or
-                    find contact information.
-                  </li>
-                  <li>
-                    Lack of Immediate Trust: Patients hesitate to choose a
-                    specialist without visible social proof, clear
-                    credentials, or transparent location details.
-                  </li>
-                  <li>
-                    Poor Mobile Disconnect: Healthcare sites frequently fail
-                    to translate complex grid elements (like multi-service
-                    cards or map embeds) into intuitive single-column
-                    smartphone layouts.
-                  </li>
-                </ul>
+              <div className="block min-[1101px]:hidden mt-12 overflow-hidden">
+                <Image
+                  src="/images/projects/website/section 2 img 2.svg"
+                  alt="Design and tech strategy overview"
+                  width={1005}
+                  height={612}
+                  className="w-full h-auto"
+                />
               </div>
             </div>
 
             <div className="border-t border-[#ABE3EE]/30 mt-16 mb-16" />
 
-            {/* Section 3 — Responsive Design Execution */}
+            {/* Section 3 — The Design System & Architecture */}
             <div
               ref={(el) => {
                 sectionRefs.current[2] = el;
               }}
               className="scroll-mt-16 min-[810px]:scroll-mt-96 min-[1101px]:scroll-mt-20"
             >
-              {/* Desktop: title + S3-01 + paragraph (left) / S3-02 (right) */}
-              <div className="hidden min-[1101px]:grid min-[1101px]:grid-cols-[1fr_auto] min-[1101px]:justify-between min-[1101px]:gap-6 min-[1101px]:items-start">
-                <div className="flex flex-col">
-                  <h2 className="text-main-blue font-bold leading-tight text-[32px]">
-                    Responsive Design Execution
-                  </h2>
+              <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[810px]:hidden min-[1101px]:block">
+                THE DESIGN SYSTEM & ARCHITECTURE
+              </h2>
 
-                  <div className="overflow-hidden mt-4">
-                    <Image
-                      src="/images/projects/website/s3-01.svg"
-                      alt="Responsive navigation bar states preview"
-                      width={615}
-                      height={96}
-                      className="w-full h-auto"
-                    />
-                  </div>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                To keep the platform scalable, consistent, and maintainable, I
+                established a dedicated component-driven design system in Figma.
+              </p>
 
-                  <p className="mt-4 text-justify leading-tight text-2xl font-bold">
-                    A minimalist, high-contrast digital platform built on a
-                    deep navy and medical blue palette, punctuated with a
-                    high-conversion golden-yellow accent color. The design
-                    minimizes cognitive load by using a single-page
-                    storytelling layout that effortlessly guides users from
-                    initial value proposition to immediate action.
-                  </p>
-                </div>
-
-                <div className="overflow-hidden flex justify-start">
-                  <Image
-                    src="/images/projects/website/s3-02.svg"
-                    alt="Expanded navigation menu design preview"
-                    width={341}
-                    height={393}
-                    className="w-auto h-auto max-h-[380px] object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Tablet: S3-02 (left) / S3-01 + paragraph (right, no title) */}
-              <div className="hidden min-[810px]:grid min-[1101px]:hidden grid-cols-[auto_1fr] justify-between gap-6 items-start">
-                <div className="overflow-hidden flex justify-start">
-                  <Image
-                    src="/images/projects/website/s3-02.svg"
-                    alt="Expanded navigation menu design preview"
-                    width={341}
-                    height={393}
-                    className="w-auto h-auto max-h-[288px] object-contain"
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <div className="overflow-hidden">
-                    <Image
-                      src="/images/projects/website/s3-01.svg"
-                      alt="Responsive navigation bar states preview"
-                      width={615}
-                      height={96}
-                      className="w-full h-auto"
-                    />
-                  </div>
-
-                  <p className="mt-4 text-justify leading-tight text-2xl font-bold">
-                    A minimalist, high-contrast digital platform built on a
-                    deep navy and medical blue palette, punctuated with a
-                    high-conversion golden-yellow accent color. The design
-                    minimizes cognitive load by using a single-page
-                    storytelling layout that effortlessly guides users from
-                    initial value proposition to immediate action.
-                  </p>
-                </div>
-              </div>
-
-              {/* Phone: title → S3-01 → S3-02 → paragraph, fully visible */}
-              <div className="min-[810px]:hidden flex flex-col">
-                <h2 className="text-main-blue font-bold leading-tight text-[24px]">
-                  Responsive Design Execution
-                </h2>
-
-                <div className="mt-4 overflow-hidden">
-                  <Image
-                    src="/images/projects/website/s3-01.svg"
-                    alt="Responsive navigation bar states preview"
-                    width={615}
-                    height={96}
-                    className="w-full h-auto"
-                  />
-                </div>
-
-                <div className="mt-4 overflow-hidden">
-                  <Image
-                    src="/images/projects/website/s3-02.svg"
-                    alt="Expanded navigation menu design preview"
-                    width={341}
-                    height={393}
-                    className="w-full h-auto"
-                  />
-                </div>
-
-                <p className="mt-4 text-justify leading-tight text-lg">
-                  A minimalist, high-contrast digital platform built on a
-                  deep navy and medical blue palette, punctuated with a
-                  high-conversion golden-yellow accent color. The design
-                  minimizes cognitive load by using a single-page
-                  storytelling layout that effortlessly guides users from
-                  initial value proposition to immediate action.
-                </p>
-              </div>
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                Core Structure & Pages
+              </h3>
+              <ul className="mt-2 list-disc pl-12 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                <li>
+                  Hero & Quick Clinic Info: Immediate value proposition, contact
+                  bar, emergency line, and direct booking trigger.
+                </li>
+                <li className="mt-2">
+                  Specialties & Services Grid: Modular cards breaking down
+                  treatment categories with clear icons and summary
+                  popups/pages.
+                </li>
+                <li className="mt-2">
+                  Doctor Profile & Qualifications: Reassuring bio highlighting
+                  credentials, academic background, and philosophy of care.
+                </li>
+                <li className="mt-2">
+                  Interactive Google Map & Location Details: Integrated live
+                  location mapping, parking availability notes, and clinic
+                  operating hours.
+                </li>
+                <li className="mt-2">
+                  Multi-Language Engine: A unified design system accommodating
+                  text expansions between French (LTR) and Arabic (RTL) to
+                  maintain optical alignment across both language versions.
+                </li>
+              </ul>
             </div>
 
             <div className="border-t border-[#ABE3EE]/30 mt-16 mb-16" />
 
-            {/* Section 4 — The Design Solution */}
+            {/* Section 4 — Execution & The Final Product */}
             <div
               ref={(el) => {
                 sectionRefs.current[3] = el;
               }}
               className="scroll-mt-16 min-[810px]:scroll-mt-96 min-[1101px]:scroll-mt-20"
             >
-              <div className="flex flex-col">
-                <h2 className="order-1 min-[810px]:hidden min-[1101px]:block text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[1101px]:text-[32px]">
-                  The Design Solution
-                </h2>
+              <h2 className="text-main-blue font-bold leading-tight text-[24px] min-[810px]:text-[28px] min-[810px]:hidden min-[1101px]:block">
+                EXECUTION & THE FINAL PRODUCT
+              </h2>
 
-                <p className="order-3 min-[1101px]:order-2 mt-4 min-[1101px]:mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
-                  Design Note on Mobile Optimization: On mobile devices, user
-                  attention spans decrease. To counter this, the primary
-                  action buttons (&ldquo;Prendre RDV&rdquo;) were moved to
-                  stand out prominently against the hero image, and the
-                  complex insurance partnership banner (&ldquo;CNOPS, CNSS,
-                  CIMR…&rdquo;) was simplified into a fluid, edge-to-edge
-                  secondary slider. Elements like the interactive location
-                  map maintain a strict full-width container on mobile to
-                  prevent accidental page borders and clipping.
-                </p>
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                Phase 1: Wireframing & Concept Validation
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                We started with low-fidelity wireframes to finalize the content
+                hierarchy and layout flow. The key focus was eliminating
+                clutter: placing critical patient information (address, hours,
+                booking buttons) above the fold and structuring medical services
+                into bite-sized, digestible visual cards.
+              </p>
 
-                {/* Manual-scroll carousel — no auto-play */}
-                <div
-                  ref={carouselRefS4}
-                  className="order-2 min-[810px]:order-1 min-[1101px]:order-3 mt-4 min-[810px]:mt-0 min-[1101px]:mt-6 w-full overflow-x-auto select-none scrollbar-hide"
-                  style={{
-                    scrollbarWidth: "none",
-                    msOverflowStyle: "none",
-                    WebkitOverflowScrolling: "touch",
-                  }}
-                >
-                  <div className="flex w-max gap-[12px] min-[810px]:gap-[24px] min-[810px]:mx-auto min-[1101px]:gap-[48px]">
-                    {s4Images.map((src, index) => (
-                      <Image
-                        key={src}
-                        src={src}
-                        alt={`Dr. Amina Bennani mobile design preview ${index + 1}`}
-                        width={279}
-                        height={564}
-                        className="shrink-0 w-auto h-[500px] min-[810px]:w-[209px] min-[810px]:h-[423px] min-[1101px]:w-auto min-[1101px]:h-[560px] object-contain"
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                Phase 2: High-Fidelity Design & Prototyping
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                Once the layout structure was validated, I developed the
+                component system in Figma—defining atomic elements like primary
+                buttons, interactive cards, localized navigation drawers, and
+                typography tokens. I created interactive prototypes to simulate
+                hover states, mobile navigation behavior, and language
+                switching.
+              </p>
+
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                Phase 3: Developer Handoff & Co-Creation
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                Working hand-in-hand with engineering, the handover was
+                friction-free. Because the Figma components directly mirrored the
+                Tailwind CSS token structure, turning static frames into Next.js
+                components was seamless. Any technical adjustments regarding
+                mobile responsiveness or font rendering were addressed
+                collaboratively in real-time.
+              </p>
+
+              <h3 className="text-[#ABE3EE] font-bold leading-tight text-[24px] min-[810px]:text-[28px] mt-5">
+                The Final Result
+              </h3>
+              <p className="mt-2 text-justify leading-tight text-lg min-[810px]:text-2xl min-[810px]:font-bold">
+                The final platform is a sleek, highly responsive, bilingual
+                medical hub. It bridges the gap between clinical professionalism
+                and warm patient care—reducing pre-appointment anxiety and giving
+                Dr. Amina Bennani a digital presence that matches the elite
+                quality of her practice.
+              </p>
             </div>
           </div>
         </div>
