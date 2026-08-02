@@ -28,7 +28,7 @@ const discussPoints = [
 
 export default function ContactPage() {
   return (
-    <section className="mx-auto max-w-404.5 px-5.375 pt-9.125 pb-5.375 min-[810px]:px-10.75 min-[810px]:pt-18.25 min-[810px]:pb-10.75 min-[1101px]:px-21.5 min-[1101px]:pt-36.5 min-[1101px]:pb-21.5 bg-[#1B1A1A]">
+    <section className="mx-auto max-w-404.5 px-6 py-12 min-[810px]:p-12 bg-[#1B1A1A]">
       {/* Heading */}
       <h1 className="font-bold leading-none text-main-blue text-[28px] min-[1101px]:text-[40px]">
         Contact
@@ -96,7 +96,7 @@ export default function ContactPage() {
               alt=""
               width={48}
               height={48}
-              className="shrink-0 w-5 min-[810px]:w-6.75 min-[1101px]:w-12 h-auto"
+              className="shrink-0 w-[30px] min-[810px]:w-6.75 min-[1101px]:w-12 h-auto"
             />
           </Link>
         ))}
