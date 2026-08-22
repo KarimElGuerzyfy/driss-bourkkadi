@@ -127,7 +127,7 @@ export default function LinovaBioPage() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-screen bg-card-bg">
       <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-10 min-[810px]:pt-16 pb-16">
         {/* Logo wordmark */}
         <Image
@@ -174,6 +174,7 @@ export default function LinovaBioPage() {
                   width={189}
                   height={206}
                   className="shrink-0 w-20 min-[810px]:w-28 min-[1101px]:w-32 h-auto"
+                  style={{ contentVisibility: "auto", containIntrinsicSize: "189px 206px" }}
                 />
               ))}
             </div>
@@ -395,6 +396,7 @@ export default function LinovaBioPage() {
                 width={300}
                 height={400}
                 className="shrink-0 w-40 min-[810px]:w-56 min-[1101px]:w-64 h-auto rounded-2xl object-cover"
+                style={{ contentVisibility: "auto", containIntrinsicSize: "300px 400px" }}
               />
             ))}
           </div>

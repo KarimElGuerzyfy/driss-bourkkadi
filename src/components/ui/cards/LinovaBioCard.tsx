@@ -17,7 +17,6 @@ export default function LinovaBioCard() {
                 src={linovabio.thumbnail}
                 alt={linovabio.title}
                 fill
-                priority
                 className="object-contain"
               />
             </div>
@@ -86,7 +85,6 @@ export default function LinovaBioCard() {
               src={linovabio.thumbnail}
               alt={linovabio.title}
               fill
-              priority
               className="object-contain"
             />
           </div>
@@ -136,7 +134,6 @@ export default function LinovaBioCard() {
               src={linovabio.thumbnail}
               alt={linovabio.title}
               fill
-              priority
               className="object-contain"
             />
           </div>

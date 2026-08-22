@@ -64,7 +64,6 @@ export default function AminaBennaniCard() {
                 src={aminabennani.thumbnail}
                 alt={aminabennani.title}
                 fill
-                priority
                 className="object-cover"
               />
             </div>
@@ -93,7 +92,6 @@ export default function AminaBennaniCard() {
               src={aminabennani.thumbnail}
               alt={aminabennani.title}
               fill
-              priority
               className="object-contain"
             />
           </div>
@@ -151,7 +149,6 @@ export default function AminaBennaniCard() {
               src={aminabennani.thumbnail}
               alt={aminabennani.title}
               fill
-              priority
               className="object-cover object-center"
             />
           </div>

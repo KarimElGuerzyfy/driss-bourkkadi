@@ -55,7 +55,6 @@ export default function SaogaCard() {
                 src={saoga.thumbnail}
                 alt={saoga.title}
                 fill
-                priority
                 className="object-contain"
               />
             </div>
@@ -84,7 +83,6 @@ export default function SaogaCard() {
               src={saoga.thumbnail}
               alt={saoga.title}
               fill
-              priority
               className="object-contain"
             />
           </div>
@@ -133,7 +131,6 @@ export default function SaogaCard() {
               src={saoga.thumbnail}
               alt={saoga.title}
               fill
-              priority
               className="object-contain"
             />
           </div>

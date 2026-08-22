@@ -381,7 +381,6 @@ export default function AboutSection() {
               alt="Bridging design and code"
               width={320}
               height={320}
-              priority
               className="w-full h-auto aspect-square object-contain"
             />
           </div>
@@ -475,7 +474,6 @@ export default function AboutSection() {
                 alt="Bridging design and code"
                 width={250}
                 height={250}
-                priority
                 onLoad={handleImage2Load}
               />
             </div>
@@ -485,7 +483,6 @@ export default function AboutSection() {
                 alt="Bridging design and code"
                 width={500}
                 height={500}
-                priority
                 onLoad={handleImage2Load}
               />
             </div>

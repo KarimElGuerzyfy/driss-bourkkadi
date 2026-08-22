@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function DeukaPage() {
   return (
-    <section className="relative min-h-screen bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-screen bg-card-bg">
 
       {/* Section 1 */}
       <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-16 pb-16">

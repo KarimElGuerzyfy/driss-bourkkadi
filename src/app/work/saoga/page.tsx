@@ -97,7 +97,7 @@ export default function SaogaPage() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-screen bg-card-bg">
       <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-10 min-[810px]:pt-16 min-[1101px]:pt-16 pb-16">
         {/* Logo wordmark */}
         <Image
@@ -240,6 +240,7 @@ export default function SaogaPage() {
                 width={277}
                 height={417}
                 className="shrink-0 w-40 h-auto min-[810px]:w-55 min-[1101px]:w-69.25 rounded-2xl object-cover"
+                style={{ contentVisibility: "auto", containIntrinsicSize: "277px 417px" }}
               />
             ))}
           </div>

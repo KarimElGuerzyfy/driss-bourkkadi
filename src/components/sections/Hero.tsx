@@ -2,7 +2,6 @@
 
 import { useLayoutEffect, useRef } from "react";
 import { createTimeline, splitText, stagger } from "animejs";
-import type { FunctionValue } from "animejs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -46,19 +45,11 @@ export default function Hero() {
     imageWrap.classList.add("hero-heading--priming");
     bottomItems.forEach((el) => el.classList.add("hero-heading--priming"));
 
-    // Odd lines enter from below (100%), even lines from above (-100%).
-    // Falls back to -100% if data-line is missing so motion never stalls.
-    const lineOffset: FunctionValue<string> = (el) => {
-      const line = Number((el as HTMLElement).dataset.line ?? 0);
-      return line % 2 ? "100%" : "-100%";
-    };
-
-    // --- Title split (words + chars) ---
+    // --- Title split (words only, same style as the paragraph) ---
     const headingSplitter = splitText(heading, {
       words: { wrap: "clip" },
-      chars: true,
     });
-    const { words: headingWords, chars: headingChars } = headingSplitter;
+    const { words: headingWords } = headingSplitter;
 
     // --- Paragraph split (words only -- smoother than per-char for a sentence) ---
     const paragraphSplitter = splitText(paragraph, {
@@ -75,9 +66,8 @@ export default function Hero() {
     const timeline = createTimeline({
       defaults: { ease: "inOut(3)", duration: 650 },
     })
-      // Title: words then chars, entrance only, settle at 0%.
-      .add(headingWords, { y: [lineOffset, "0%"] }, stagger(125))
-      .add(headingChars, { y: [lineOffset, "0%"] }, stagger(10, { from: "random" }))
+      // Title: word-based slide-up, same style as the paragraph below.
+      .add(headingWords, { y: ["100%", "0%"], duration: 650, ease: "out(3)", delay: stagger(30) })
       // Paragraph: word-based, starts after the title finishes (~900ms).
       .add(
         paragraphWords,
@@ -130,8 +120,8 @@ export default function Hero() {
             ref={headingRef}
             className="hero-heading font-extrabold leading-[0.8] min-[1101px]:leading-[1] text-[24px] md:text-[clamp(2.75rem,4.5vw,4rem)] max-[1100px]:text-[32px] max-[419px]:text-[24px]"
           >
-            <span className="block text-white" data-line="0">Driss Bourakkadi</span>
-            <span className="block text-main-blue" data-line="1">Visual Design Specialist</span>
+            <span className="block text-white">Driss Bourakkadi</span>
+            <span className="block text-main-blue">Visual Design Specialist</span>
           </h1>
           <p
             ref={paragraphRef}

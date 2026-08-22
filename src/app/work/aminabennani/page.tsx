@@ -68,7 +68,7 @@ export default function AminaBennaniPage() {
   );
 
   return (
-    <section className="relative min-h-screen bg-[url('/images/projects/noise%20background.svg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-screen bg-card-bg">
       <div className="max-w-404.5 mx-auto px-6 min-[810px]:px-12 min-[1101px]:px-32 pt-16 min-[810px]:pt-16 min-[1101px]:pt-10 pb-16">
         {/* Tablet-only vertical pill stack, full width — collapses to active pill only on scroll */}
         <nav className="hidden min-[810px]:flex min-[1101px]:hidden flex-col gap-3 sticky top-32 z-30 mb-6">
